@@ -13,6 +13,7 @@ in
             pkgs.traceroute
             pkgs.tree
             pkgs.tmux
+            pkgs.jq
 
             # editor
             pkgs.emacs
