@@ -17,6 +17,10 @@ in
             pkgs.emacs
             pkgs.vim
 
+            # aws
+            pkgs.awscli2
+            pkgs.aws-sam-cli
+            
             # development
             pkgs.elmPackages.elm
             pkgs.git
