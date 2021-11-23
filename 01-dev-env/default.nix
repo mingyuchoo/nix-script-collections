@@ -12,6 +12,7 @@ in
             pkgs.sysstat
             pkgs.traceroute
             pkgs.tree
+            pkgs.tmux
 
             # editor
             pkgs.emacs
