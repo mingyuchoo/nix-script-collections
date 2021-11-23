@@ -27,6 +27,11 @@ in
             pkgs.nodejs-16_x
             pkgs.jdk
             
+            # docker
+            pkgs.docker
+            pkgs.docker-client
+            pkgs.docker-compose_2
+            
             # python
             pkgs.python2Full
             pkgs.python3Full
