@@ -22,7 +22,11 @@ in
             pkgs.git
             pkgs.nodejs-16_x
             pkgs.jdk
-
+            
+            # python
+            pkgs.python2Full
+            pkgs.python3Full
+            
             # haskell
             pkgs.ghc
             pkgs.stack
