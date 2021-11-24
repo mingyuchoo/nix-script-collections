@@ -11,6 +11,14 @@ let
         hlint
         ghcid
     ]);
+    elm-with-packages = with pkgs.elmPackages; [
+        elm
+        elm-analyse
+        elm-doc-preview
+        elm-format
+        elm-live
+        elm-test
+    ];
 in
     pkgs.mkShell {
         buildInputs = [
@@ -42,9 +50,7 @@ in
             haskell-with-packages
 
             # elm
-            pkgs.elmPackages.elm
-            pkgs.elmPackages.elm-format
-            pkgs.elmPackages.elm-live
+            elm-with-packages
 
             # docker
             pkgs.docker
@@ -64,6 +70,8 @@ in
 
         ];
         shellHook = ''
+            echo "---------------------------------------------"
             echo "Great!, Nix packages were built successfully."
+            echo "---------------------------------------------"
         '';
 }
