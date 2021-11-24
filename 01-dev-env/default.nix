@@ -32,12 +32,15 @@ in
             pkgs.traceroute
             pkgs.tree
             pkgs.tmux
+            pkgs.hurl
+            pkgs.exa
             pkgs.jq
             pkgs.git
 
             # editor
             pkgs.emacs
             pkgs.vim
+            pkgs.vifm
 
             # java
             pkgs.jdk
