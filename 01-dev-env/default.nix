@@ -24,18 +24,19 @@ in
         buildInputs = [
             pkgs.cmatrix
             pkgs.curl
+            pkgs.exa
+            pkgs.git
+            pkgs.hurl
             pkgs.htop
+            pkgs.jq
             pkgs.nmon
             pkgs.nnn
             pkgs.p7zip
+            pkgs.pgcli
             pkgs.sysstat
+            pkgs.tmux
             pkgs.traceroute
             pkgs.tree
-            pkgs.tmux
-            pkgs.hurl
-            pkgs.exa
-            pkgs.jq
-            pkgs.git
 
             # editor
             pkgs.emacs
