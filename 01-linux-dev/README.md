@@ -13,5 +13,5 @@ $ nix-shell
 
 # or
 
-$ nix-shell shell.nix
+$ nix-shell default.nix
 ```
