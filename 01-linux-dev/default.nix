@@ -56,6 +56,9 @@ in
             # elm
             elm-with-packages
 
+            # golang
+            pkgs.go
+
             # docker
             pkgs.docker
             pkgs.docker-client
