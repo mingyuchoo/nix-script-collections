@@ -62,7 +62,7 @@ in
             # docker
             pkgs.docker
             pkgs.docker-client
-            pkgs.docker-compose_2
+            pkgs.docker-compose
 
             # nodejs
             pkgs.nodejs-16_x
