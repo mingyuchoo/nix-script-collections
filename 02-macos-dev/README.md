@@ -1,4 +1,4 @@
-# 01-dev-env
+# 02-macos-dev
 
 ## Prerequisite
 
