@@ -5,10 +5,12 @@ let
         # other python packages you want
     ]);
     haskell-with-packages = pkgs.ghc.withPackages (ps: with ps; [
+        cabal-install
         stack
         stylish-haskell
         hindent
         hlint
+        hoogle
         ghcid
     ]);
     elm-with-packages = with pkgs.elmPackages; [
