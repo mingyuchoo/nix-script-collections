@@ -5,9 +5,10 @@ let
         # other python packages you want
     ]);
     haskell-with-packages = pkgs.ghc.withPackages (ps: with ps; [
-        cabal-install
         stack
+        cabal-install
         stylish-haskell
+        haskell-language-server
         hindent
         hlint
         hoogle
