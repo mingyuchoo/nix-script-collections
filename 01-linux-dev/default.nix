@@ -1,18 +1,9 @@
 let
     pkgs = import <nixpkgs> {};
+    haskellVersion = "ghc921";
     python3-with-packages = pkgs.python3Full.withPackages (ps: with ps; [
         pip
         # other python packages you want
-    ]);
-    haskell-with-packages = pkgs.ghc.withPackages (ps: with ps; [
-        stack
-        cabal-install
-        stylish-haskell
-        haskell-language-server
-        hindent
-        hlint
-        hoogle
-        ghcid
     ]);
     elm-with-packages = with pkgs.elmPackages; [
         elm
@@ -54,7 +45,15 @@ in
             pkgs.rustup
 
             # haskell
-            haskell-with-packages
+            pkgs.haskell.compiler."${haskellVersion}"
+            pkgs.haskell-language-server
+            pkgs.stylish-haskell
+            pkgs.cabal-install
+            pkgs.stack
+            pkgs.hlint
+            pkgs.ghcid
+            pkgs.haskellPackages.hindent
+            pkgs.haskellPackages.hoogle
 
             # elm
             elm-with-packages
