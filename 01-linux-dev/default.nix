@@ -46,13 +46,14 @@ in
 
             # haskell
             pkgs.haskell.compiler."${haskellVersion}"
-            pkgs.haskell-language-server
-            pkgs.stylish-haskell
-            pkgs.cabal-install
-            pkgs.stack
-            pkgs.hlint
-            pkgs.ghcid
+            pkgs.haskellPackages.cabal-install
+            pkgs.haskellPackages.haskell-language-server
+            pkgs.haskellPackages.stack
+            pkgs.haskellPackages.stylish-haskell
+            pkgs.haskellPackages.ghci
+            pkgs.haskellPackages.ghcid
             pkgs.haskellPackages.hindent
+            pkgs.haskellPackages.hlint
             pkgs.haskellPackages.hoogle
 
             # elm
