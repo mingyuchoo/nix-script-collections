@@ -33,12 +33,12 @@ in
             pkgs.tree
 
             # editor
-            pkgs.emacs
+            pkgs.emacs27-nox
             pkgs.vim
             pkgs.vifm
 
             # java
-            pkgs.jdk
+            pkgs.jdk17
 
             # rust
             pkgs.cargo
@@ -61,6 +61,11 @@ in
             # golang
             pkgs.go
 
+            # ocaml
+            pkgs.ocaml
+            pkgs.opam
+            pkgs.ocamlPackages.dune
+
             # docker
             pkgs.docker
             pkgs.docker-client
@@ -68,6 +73,7 @@ in
 
             # nodejs
             pkgs.nodejs-16_x
+            pkgs.yarn
 
             # python
             pkgs.python2Full

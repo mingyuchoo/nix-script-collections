@@ -1,8 +1,16 @@
-# Nix Language
+# nix-script-collections
 
-## Values
+## Nix REPL
 
-### Simple Values
+```nix
+nix repl '<nixpkgs>'
+```
+
+## Nix Language
+
+### Values
+
+#### Simple Values
 
 * Strings
 * Numbers
@@ -12,7 +20,7 @@
   * Booleans
   * The null value
 
-## Lists
+### Lists
 
 ```nix
 [ v1 v2 v3 ... vn ]
@@ -24,7 +32,7 @@
 [ 123 ./foo.nix "abc" (f { x = y; }) ]
 ```
 
-## Sets
+### Sets
 
 ```nix
 { name1 = value1;
@@ -42,7 +50,7 @@
 
 ```
 
-## Recursive sets
+### Recursive sets
 
 ```nix
 # example
@@ -52,7 +60,7 @@ rec {
 }.x
 ```
 
-## Let-expressions
+### Let-expressions
 
 ```nix
 let e1; in e2
@@ -65,7 +73,7 @@ let x = "foo";
 in x + y
 ```
 
-## Inheriting attributes
+### Inheriting attributes
 
 ```nix
 # example
@@ -81,31 +89,31 @@ let x = 123; in
 }
 ```
 
-## Functions
+### Functions
 
 ```nix
 pattern: body
 ```
 
-## Conditionals
+### Conditionals
 
 ```nix
 if e1 then e2 else e3
 ```
 
-## Assertions
+### Assertions
 
 ```nix
 assert e1; e2
 ```
 
-## With-expressions
+### With-expressions
 
 ```nix
 with e1; e2
 ```
 
-## Comments
+### Comments
 
 ```nix
 #
