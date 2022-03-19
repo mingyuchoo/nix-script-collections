@@ -62,9 +62,9 @@ in
             pkgs.go
 
             # ocaml
-            pkgs.ocaml
+            pkgs.ocamlPackages.ocaml
+            pkgs.ocamlPackages.dune_3
             pkgs.opam
-            pkgs.ocamlPackages.dune
 
             # docker
             pkgs.docker
