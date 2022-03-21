@@ -71,6 +71,9 @@ in
             pkgs.docker
             pkgs.docker-client
             pkgs.docker-compose
+            
+            # terraform
+            pkgs.terraform
 
             # nodejs
             pkgs.nodejs-16_x
