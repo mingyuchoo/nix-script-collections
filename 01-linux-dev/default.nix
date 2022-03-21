@@ -64,7 +64,6 @@ in
 
             # ocaml
             pkgs.ocamlPackages.ocaml
-            pkgs.ocamlPackages.dune_3
             pkgs.opam
 
             # docker
