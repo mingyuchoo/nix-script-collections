@@ -1,6 +1,6 @@
 let
     pkgs = import <nixpkgs> {};
-    haskellVersion = "ghc921";
+    haskellVersion = "ghc922";
     python3-with-packages = pkgs.python3Full.withPackages (ps: with ps; [
         pip
         # other python packages you want
