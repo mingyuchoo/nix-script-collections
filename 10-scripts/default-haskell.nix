@@ -4,7 +4,7 @@
 ################################################
 with import <nixpkgs> {};
     let
-        version = "ghc921";
+        version = "ghc922";
     in
             stdenv.mkDerivation rec {
                 name = "<project-name>";
