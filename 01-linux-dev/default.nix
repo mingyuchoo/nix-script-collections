@@ -82,6 +82,9 @@ in
             pkgs.python2Full
             python3-with-packages
 
+            # ansible
+            pkgs.ansible
+
             # aws
             pkgs.awscli2
             pkgs.aws-sam-cli
