@@ -3,15 +3,15 @@
 ## Prerequisite
 
 ```bash
-$ curl -L https://nixos.org/nix/install | sh
+curl -L https://nixos.org/nix/install | sh
 ```
 
 ## How to run
 
 ```bash
-$ nix-shell
+nix-shell
 
 # or
 
-$ nix-shell default.nix
+nix-shell default.nix
 ```
