@@ -1,5 +1,11 @@
 # nix-script-collections
 
+## Prerequisite
+
+```bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
 ## Nix REPL
 
 ```nix
