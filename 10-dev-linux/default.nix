@@ -33,12 +33,12 @@ in
             pkgs.tree
 
             # editor
-            pkgs.emacs27-nox
+            pkgs.emacs28-nox
             pkgs.vim
             pkgs.vifm
 
             # java
-            pkgs.jdk17
+            pkgs.jdk11
 
             # rust
             pkgs.cargo
