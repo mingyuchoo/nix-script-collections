@@ -1,4 +1,4 @@
-# 01-linux-env
+# 11-dev-wsl2
 
 ## Prerequisite
 
