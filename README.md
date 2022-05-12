@@ -21,6 +21,8 @@ Added 16381 variables.
 nix-repl> pkgs.<<TAB KEY>>
 
 ...
+
+nix-repl> :q # EXIT
 ```
 
 ## Nix Language
