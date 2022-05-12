@@ -55,3 +55,8 @@ nix-repl> pkgs.<<TAB KEY>>
 
 ...
 ```
+
+# References
+
+-<https://gist.github.com/adisbladis/187204cb772800489ee3dac4acdd9947>
+
