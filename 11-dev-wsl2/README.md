@@ -21,3 +21,13 @@ nix develop
 exit
 nix develop # again
 ```
+### How to run automatically when you login your linux account
+
+Edit `~/.profile` file
+
+```bash
+...
+
+# on the bottom line
+nix develop $CURRENT-GITHUB-REPOSITORY-PATH
+```
