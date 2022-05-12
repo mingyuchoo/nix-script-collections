@@ -3,7 +3,7 @@
 let
   haskellVersion = "ghc922";
   
-  python3-with-packages = pkgs.python3Full.withPackages (ps: with ps; [
+  python3-with-packages = pkgs.python310.withPackages (ps: with ps; [
     pip
   ]);
   

@@ -3,18 +3,24 @@
 ## Prerequisite
 
 ```bash
+# Multi-user installation
 sh <(curl -L https://nixos.org/nix/install) --daemon
+
+# Single-user installation
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 
-## How to run
+## Install flakes
+
+Edit `/etc/nix/nix.conf` if you installed Nix as `Multi-user` or 
+create and edit `~/.config/nix/nix.conf` if you installed Nix as `Single-user`
+
+and add:
 
 ```bash
-nix-shell
-
-# or
-
-nix-shell default.nix
+experimental-features = nix-command flakes
 ```
+
 ## Nix REPL(Real-Eval-Print-Loop)
 
 ### How to search Nix packages using Nix REPL
