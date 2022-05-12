@@ -3,10 +3,6 @@
 let
   haskellVersion = "ghc922";
   
-  python3-with-packages = pkgs.python3Full.withPackages (ps: with ps; [
-    pip
-  ]);
-  
   elm-with-packages = with pkgs.elmPackages; [
     elm
     elm-analyse
@@ -15,10 +11,33 @@ let
     elm-live
     elm-test
   ];
+
+  podmanSetupScript =
+  let
+    registriesConf = pkgs.writeText "registries.conf" ''
+      [registries.search]
+      registries = ['docker.io']
+      [registries.block]
+      registries = []
+    '';
+  in pkgs.writeScript "podman-setup" ''
+    #!${pkgs.runtimeShell}
+    # Dont overwrite customised configuration
+    if ! test -f ~/.config/containers/policy.json; then
+      install -Dm555 ${pkgs.skopeo.src}/default-policy.json ~/.config/containers/policy.json
+    fi
+    if ! test -f ~/.config/containers/registries.conf; then
+      install -Dm555 ${registriesConf} ~/.config/containers/registries.conf
+    fi
+  '';
+
+  dockerCompat = pkgs.runCommandNoCC "docker-podman-compat" {} ''
+    mkdir -p $out/bin
+    ln -s ${pkgs.podman}/bin/podman $out/bin/docker
+  '';
 in
   mkShell {
   buildInputs = [
-    pkgs.cmatrix
     pkgs.curl
     pkgs.exa
     pkgs.git
@@ -28,16 +47,13 @@ in
     pkgs.nmon
     pkgs.nnn
     pkgs.p7zip
-    pkgs.pgcli
     pkgs.sysstat
-    pkgs.tmux
     pkgs.traceroute
     pkgs.tree
 
     # editor
     pkgs.emacs28-nox
     pkgs.vim
-    pkgs.vifm
 
     # java
     pkgs.jdk11
@@ -68,10 +84,15 @@ in
     pkgs.ocamlPackages.ocaml
     pkgs.opam
 
-    # docker
-    pkgs.docker
-    pkgs.docker-client
-    pkgs.docker-compose
+    # podman
+    dockerCompat
+    pkgs.podman  # Docker compat
+    pkgs.runc    # Container runtime
+    pkgs.conmon  # Container runtime monitor
+    pkgs.skopeo  # Interact with container registry
+    pkgs.slirp4netns     # User-mode networking for unprivileged namespaces
+    pkgs.fuse-overlayfs  # CoW for images, much faster than default vfs
+    pkgs.podman-compose  # alternative for docker-compose
     
     # terraform
     pkgs.terraform
@@ -81,8 +102,8 @@ in
     pkgs.yarn
 
     # python
-    pkgs.python2Full
-    python3-with-packages
+    pkgs.python310
+    pkgs.python310Packages.pip
 
     # ansible
     pkgs.ansible
