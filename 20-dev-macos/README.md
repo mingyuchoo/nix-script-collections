@@ -1,4 +1,4 @@
-# 02-macos-dev
+# 20-dev-macos
 
 ## Prerequisite
 
