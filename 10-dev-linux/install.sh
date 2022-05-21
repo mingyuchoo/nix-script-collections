@@ -28,3 +28,13 @@ sudo chmod +x /usr/local/bin/docker-compose
 ########################################
 sudo useradd -mrUd /home/git git
 
+# Install Nix for multi-user
+########################################
+sh <(curl -L https://nixos.org/nix/install) --daemon
+echo "source \"$HOME/.nix-profile/etc/profile.d/nix.sh\"" >> .bashrc
+
+# Install Doom Emacs
+########################################
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+$HOME/.emacs.d/bin/doom install
+$HOME/.emacs.d/bin/doom sync
