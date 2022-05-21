@@ -29,6 +29,7 @@ in
     pkgs.nnn
     pkgs.p7zip
     pkgs.pgcli
+    pkgs.nettools
     pkgs.sysstat
     pkgs.tmux
     pkgs.traceroute

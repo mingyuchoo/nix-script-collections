@@ -47,6 +47,7 @@ in
     pkgs.nmon
     pkgs.nnn
     pkgs.p7zip
+    pkgs.nettools
     pkgs.sysstat
     pkgs.traceroute
     pkgs.tree
