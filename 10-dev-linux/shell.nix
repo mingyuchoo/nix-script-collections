@@ -80,6 +80,9 @@ in
     pkgs.python2Full
     python3-with-packages
 
+    # Docker
+    pkgs.docui
+
     # ansible
     pkgs.ansible
 
