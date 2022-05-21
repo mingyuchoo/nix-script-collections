@@ -69,11 +69,6 @@ in
     pkgs.ocamlPackages.ocaml
     pkgs.opam
 
-    # docker
-    pkgs.docker
-    pkgs.docker-client
-    pkgs.docker-compose
-    
     # terraform
     pkgs.terraform
 
