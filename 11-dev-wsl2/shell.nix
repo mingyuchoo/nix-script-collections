@@ -1,8 +1,8 @@
-{ pkgs ? import <nixpkgs> { } }: with pkgs;
+{ pkgs ? import <nixpkgs> {} }: with pkgs;
 
 let
   haskellVersion = "ghc922";
-  
+
   elm-with-packages = with pkgs.elmPackages; [
     elm
     elm-analyse
@@ -94,7 +94,7 @@ in
     pkgs.slirp4netns     # User-mode networking for unprivileged namespaces
     pkgs.fuse-overlayfs  # CoW for images, much faster than default vfs
     pkgs.podman-compose  # alternative for docker-compose
-    
+
     # terraform
     pkgs.terraform
 

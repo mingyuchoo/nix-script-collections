@@ -1,16 +1,8 @@
+{ pkgs ? import <nixpkgs> {} }: with pkgs;
+
 let
-  pkgs = import <nixpkgs> {};
-  python3-with-packages = pkgs.python3Full.withPackages (ps: with ps; [
-    pip
-    # other python packages you want
-  ]);
-  haskell-with-packages = pkgs.ghc.withPackages (ps: with ps; [
-    stack
-    stylish-haskell
-    hindent
-    hlint
-    ghcid
-  ]);
+  haskellVersion = "ghc922";
+
   elm-with-packages = with pkgs.elmPackages; [
     elm
     elm-analyse
@@ -19,57 +11,90 @@ let
     elm-live
     elm-test
   ];
+
 in
-  pkgs.mkShell {
-    buildInputs = [
-      pkgs.cmatrix
-      pkgs.curl
-      pkgs.exa
-      pkgs.git
-      pkgs.hurl
-      pkgs.htop
-      pkgs.jq
-      pkgs.nnn
-      pkgs.p7zip
-      pkgs.pgcli
-      pkgs.tmux
-      pkgs.tree
-      pkgs.wget
+  mkShell {
+  buildInputs = [
+    pkgs.curl
+    pkgs.exa
+    pkgs.git
+    pkgs.hurl
+    pkgs.htop
+    pkgs.jq
+    pkgs.nmon
+    pkgs.nnn
+    pkgs.p7zip
+    pkgs.nettools
+    pkgs.sysstat
+    pkgs.traceroute
+    pkgs.tree
 
-      # editor
-      pkgs.emacs
-      pkgs.vim
-      pkgs.vifm
+    # editor
+    pkgs.emacs28-nox
+    pkgs.vim
 
-      # java
-      pkgs.jdk
+    # java
+    pkgs.jdk11
 
-      # rust
-      pkgs.cargo
-      pkgs.rustup
+    # rust
+    pkgs.cargo
+    pkgs.rustup
 
-      # haskell
-      haskell-with-packages
+    # haskell
+    pkgs.haskell.compiler."${haskellVersion}"
+    pkgs.haskellPackages.cabal-install
+    pkgs.haskellPackages.haskell-language-server
+    pkgs.haskellPackages.stack
+    pkgs.haskellPackages.stylish-haskell
+    pkgs.haskellPackages.ghci
+    pkgs.haskellPackages.ghcid
+    pkgs.haskellPackages.hindent
+    pkgs.haskellPackages.hlint
+    pkgs.haskellPackages.hoogle
 
-      # elm
-      elm-with-packages
+    # elm
+    elm-with-packages
 
-      # docker
-      pkgs.docker
-      pkgs.docker-client
-      pkgs.docker-compose_2
+    # golang
+    pkgs.go
 
-      # nodejs
-      pkgs.nodejs-16_x
+    # ocaml
+    pkgs.ocamlPackages.ocaml
+    pkgs.opam
 
-      # python
-      pkgs.python2Full
-      python3-with-packages
+    # podman
+    dockerCompat
+    pkgs.podman  # Docker compat
+    pkgs.runc    # Container runtime
+    pkgs.conmon  # Container runtime monitor
+    pkgs.skopeo  # Interact with container registry
+    pkgs.slirp4netns     # User-mode networking for unprivileged namespaces
+    pkgs.fuse-overlayfs  # CoW for images, much faster than default vfs
+    pkgs.podman-compose  # alternative for docker-compose
 
-    ];
-    shellHook = ''
-      echo "---------------------------------------------"
-      echo "Great!, Nix packages were built successfully."
-      echo "---------------------------------------------"
-    '';
-}
+    # terraform
+    pkgs.terraform
+
+    # nodejs
+    pkgs.nodejs-16_x
+    pkgs.yarn
+
+    # python
+    pkgs.python310
+    pkgs.python310Packages.pip
+
+    # ansible
+    pkgs.ansible
+
+    # aws
+    pkgs.awscli2
+    pkgs.aws-sam-cli
+  ];
+
+  shellHook = ''
+    PS1="\n\[\033[1;36m\][nix develop:\w]\$ \[\033[0m\]"
+    echo "---------------------------------------------"
+    echo "Great!, Nix packages were built successfully."
+    echo "---------------------------------------------"
+  '';
+  }

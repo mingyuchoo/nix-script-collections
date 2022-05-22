@@ -1,12 +1,12 @@
-{ pkgs ? import <nixpkgs> { } }: with pkgs;
+{ pkgs ? import <nixpkgs> {} }: with pkgs;
 
 let
   haskellVersion = "ghc922";
-  
+
   python3-with-packages = pkgs.python310.withPackages (ps: with ps; [
     pip
   ]);
-  
+
   elm-with-packages = with pkgs.elmPackages; [
     elm
     elm-analyse
