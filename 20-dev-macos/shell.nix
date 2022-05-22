@@ -62,16 +62,6 @@ in
     pkgs.ocamlPackages.ocaml
     pkgs.opam
 
-    # podman
-    dockerCompat
-    pkgs.podman  # Docker compat
-    pkgs.runc    # Container runtime
-    pkgs.conmon  # Container runtime monitor
-    pkgs.skopeo  # Interact with container registry
-    pkgs.slirp4netns     # User-mode networking for unprivileged namespaces
-    pkgs.fuse-overlayfs  # CoW for images, much faster than default vfs
-    pkgs.podman-compose  # alternative for docker-compose
-
     # terraform
     pkgs.terraform
 
