@@ -21,12 +21,8 @@ in
     pkgs.hurl
     pkgs.htop
     pkgs.jq
-    pkgs.nmon
     pkgs.nnn
     pkgs.p7zip
-    pkgs.nettools
-    pkgs.sysstat
-    pkgs.traceroute
     pkgs.tree
 
     # editor
@@ -68,10 +64,6 @@ in
     # nodejs
     pkgs.nodejs-16_x
     pkgs.yarn
-
-    # python
-    pkgs.python310
-    pkgs.python310Packages.pip
 
     # ansible
     pkgs.ansible
