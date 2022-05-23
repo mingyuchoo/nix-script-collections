@@ -21,6 +21,17 @@ and add:
 experimental-features = nix-command flakes
 ```
 
+## How to use
+
+```bash
+nix develop
+
+# or 
+
+export NIXPKGS_ALLOW_BROKEN=1
+nix develop --impure
+```
+
 ## Nix REPL(Real-Eval-Print-Loop)
 
 ### How to search Nix packages using Nix REPL
