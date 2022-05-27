@@ -81,3 +81,12 @@ else
     echo "experimental-features = nix-command flakes" | tee --append "$HOME/.config/nix/nix.conf" > /dev/null
 fi
 
+
+# Add Nix Flakes start up script to .profile
+########################################
+if [ -z "$(egrep -e develop $HOME/.profile)" ]
+then
+    echo "nix develop $PWD" | tee --append "$HOME/.profile" > /dev/null
+else
+    echo "[NOTICE] Nix Flake already added to .profile"
+fi
