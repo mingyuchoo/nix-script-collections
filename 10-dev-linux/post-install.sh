@@ -39,8 +39,10 @@ fi
 
 # Set up Git config file to $HOME
 ########################################
-if [ -z "$HOME/.gitconfig" ]
+if [ -f "$HOME/.gitconfig" ]
 then
+    echo "[NOTICE] \`.gitconfig\` file is already exists."
+else
     cp .gitconfig "$HOME"
 
     read -p "Enter your git email-address: " email
@@ -51,34 +53,32 @@ then
     sed -i "s/my-name/$name/g" "$HOME/.gitconfig"
 
     echo "[DONE] \`.gitconfig\` file is copied successfully."
-else
-    echo "[NOTICE] \`.gitconfig\` file is already exists."
 fi
 
 # Copy Haskell config files to $HOME
 ########################################
-if [ -z "$HOME/.stylish-haskell.yaml" ]
+if [ -f "$HOME/.stylish-haskell.yaml" ]
 then
+    echo "[NOTICE] \`.stylish-haskell.yaml\` file is already exists."
+else
     cp .stylish-haskell.yaml "$HOME"
     echo "[DONE] \`.stylish-haskell.yaml\` file is copied successfully."
-else
-    echo "[NOTICE] \`.stylish-haskell.yaml\` file is already exists."
 fi
 
-if [ -z "$HOME/.ghc" ]
+if [ -d "$HOME/.ghc" ]
 then
+    echo "[NOTICE] \`.ghc\` directory is already exists."
+else
     cp -rf .ghc "$HOME"
     echo "[DONE] \`.ghc\` directory is copied successfully."
-else
-    echo "[NOTICE] \`.ghc\` directory is already exists."
 fi
 
 # Copy Tmux config file to $HOME
 ########################################
-if [ -z "$HOME/.tmux.conf" ]
+if [ -f "$HOME/.tmux.conf" ]
 then
+    echo "[NOTICE] \`.tmux.conf\` file is already exists."
+else
     cp .tmux.conf "$HOME"
     echo "[DONE] \`.tmux.conf\` file is copied successfully."
-else
-    echo "[NOTICE] \`.tmux.conf\` file is already exists."
 fi
