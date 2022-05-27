@@ -66,9 +66,7 @@ fi
 if [ -z $(which nix) ]
 then
     sh <(curl -L https://nixos.org/nix/install) --daemon
-    echo "source \"$HOME/.nix-profile/etc/profile.d/nix.sh\"" >> $HOME/.bashrc
-    . $HOME/.bashrc
-    
+    #echo "source \"$HOME/.nix-profile/etc/profile.d/nix.sh\"" >> $HOME/.bashrc
 else
     echo "[NOTICE] Nix is already installed."
 fi
@@ -91,8 +89,8 @@ then
     tee --append $HOME/.profile > /dev/null <<EOF
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.emacs.d/bin" ] ; then
-    PATH="$home/.emacs.d/bin:$PATH"
+if [ -d "\$HOME/.emacs.d/bin" ] ; then
+    PATH="\$HOME/.emacs.d/bin:\$PATH"
 fi
 EOF
 else
