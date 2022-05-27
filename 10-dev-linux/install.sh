@@ -54,6 +54,14 @@ fi
 if [ -z "$(egrep -e git /etc/passwd)" ]
 then
     sudo useradd --system --user-group --shell /bin/bash --create-home --home-dir /home/git git
+    # sudo runuser git
+    # cd "$HOME"
+    # mkdir -p "$HOME/.ssh"
+    # chmod 700 "$HOME/.ssh"
+    # touch "$HOME/.ssh/authorized_keys"
+    # chmod 600 "$HOME/.ssh/authorized_keys"
+    # git init --bare "$HOME/sample.git"
+    # exit
     echo "[DONE] \`git\` account is created successfully."
 else
     echo "[NOTICE] \`git\` account is alreay exists."
