@@ -6,12 +6,12 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-# Install OpenSSH Server
-########################################
-sudo apt install -y openssh-server
-sudo systemctl enable ssh
-sudo systemctl start ssh
-sudo ufw allow ssh
+# # Install OpenSSH Server
+# ########################################
+# sudo apt install -y openssh-server
+# sudo systemctl enable ssh
+# sudo systemctl start ssh
+# sudo ufw allow ssh
 
 # Install Docker
 ########################################
@@ -26,7 +26,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Create git user for Git Repository
 ########################################
-sudo useradd -mrUd /home/git git
+sudo useradd --system --user-group --shell /bin/bash --create-home --home-dir /home/git git
+sudo useradd --system --user-group --shell /bin/bash --create-home --home-dir /home/jenkins jenkins
 
 # Install Nix for multi-user
 ########################################
