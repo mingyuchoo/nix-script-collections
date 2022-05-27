@@ -70,6 +70,9 @@ in
     pkgs.ocamlPackages.ocaml
     pkgs.opam
 
+    # zig
+    pkgs.zig
+
     # terraform
     pkgs.terraform
 
