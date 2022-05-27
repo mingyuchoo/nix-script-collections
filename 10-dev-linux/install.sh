@@ -99,12 +99,12 @@ fi
 
 # Install Doom Emacs
 ########################################
-if [ -d "$HOME/.emacs.d/bin" ]
+if [ -z "$(which emacs)" ]
 then
     git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
     "$HOME/.emacs.d/bin/doom" install
     "$HOME/.emacs.d/bin/doom" sync
 else
-    echo "[NOTICE] \`.emacs.d/bin\` path is not exists yet."
+    echo "[NOTICE] emacs is not exists yet."
 fi
 
