@@ -84,12 +84,6 @@ else
 fi
 
 
-# Install modules for Python3 
-########################################
-python3 -m pip install --user upgrade pip
-python3 -m pip install --user virtualenv
-
-
 # add $HOME/.emacs.d/bin path to .profile
 ########################################
 if [ -z $(egrep -e ".emacs.d/bin" $HOME/.profile) ]
