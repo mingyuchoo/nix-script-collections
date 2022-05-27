@@ -8,7 +8,7 @@ sudo apt autoremove -y
 
 # Install OpenSSH Server
 ########################################
-if [ -z '$(pidof sshd)' ]
+if [ -z "$(pidof sshd)" ]
 then
     sudo apt install -y openssh-server
     sudo systemctl enable ssh
@@ -20,14 +20,14 @@ fi
 
 # Install Docker
 ########################################
-if [ -z '$(pidof dockerd)' ]
+if [ -z "$(pidof dockerd)" ]
 then
     sudo apt install -y docker.io
 else
     echo "[NOTICE] docker daemon is already running."
 fi
 
-if [ -z '$(groups | grep docker)' ]
+if [ -z "$(groups | grep docker)" ]
 then
     sudo groupadd docker
     sudo usermod -aG docker "$USER"
@@ -37,7 +37,7 @@ fi
 
 # Install docker-compose
 ########################################
-if [ -z '$(which docker-compose)' ]
+if [ -z "$(which docker-compose)" ]
 then
     sudo curl -L "https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
@@ -47,14 +47,14 @@ fi
 
 # Create git user for Git Repository
 ########################################
-if [ -z '$(egrep -e git /etc/passwd)' ]
+if [ -z "$(egrep -e git /etc/passwd)" ]
 then
     sudo useradd --system --user-group --shell /bin/bash --create-home --home-dir /home/git git
 else
     echo "[NOTICE] \`git\` account is alreay exists."
 fi
 
-if [ -z '$(egrep -e jenkin /etc/passwd)' ]
+if [ -z "$(egrep -e jenkin /etc/passwd)" ]
 then
     sudo useradd --system --user-group --shell /bin/bash --create-home --home-dir /home/jenkins jenkins
 else
@@ -63,7 +63,7 @@ fi
 
 # Install Nix for multi-user
 ########################################
-if [ -z '$(which nix)' ]
+if [ -z "$(which nix)" ]
 then
     sh <(curl -L https://nixos.org/nix/install) --daemon
     #echo "source \"$HOME/.nix-profile/etc/profile.d/nix.sh\"" >> $HOME/.bashrc
@@ -84,7 +84,7 @@ fi
 
 # add $HOME/.emacs.d/bin path to .profile
 ########################################
-if [ -z '$(egrep -e ".emacs.d/bin" $HOME/.profile)' ]
+if [ -z "$(egrep -e ".emacs.d/bin" $HOME/.profile)" ]
 then
     tee --append "$HOME/.profile" > /dev/null <<EOF
 
@@ -102,8 +102,8 @@ fi
 if [ -d "$HOME/.emacs.d/bin" ]
 then
     git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-    $HOME/.emacs.d/bin/doom install
-    $HOME/.emacs.d/bin/doom sync
+    "$HOME/.emacs.d/bin/doom" install
+    "$HOME/.emacs.d/bin/doom" sync
 else
     echo "[NOTICE] \`.emacs.d/bin\` path is not exists yet."
 fi
