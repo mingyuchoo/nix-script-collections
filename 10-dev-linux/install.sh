@@ -97,7 +97,7 @@ then
     tee --append "$HOME/.profile" > /dev/null <<EOF
 
 # Start up Nix Flakes
-nix develp $PWD
+nix develop $PWD
 EOF
     echo "[DONE] Nix Flakes is added to .profile successfully."
 else
