@@ -30,6 +30,7 @@ in
     pkgs.p7zip
     pkgs.pgcli
     pkgs.nettools
+    pkgs.shellcheck
     pkgs.sysstat
     pkgs.tmux
     pkgs.traceroute

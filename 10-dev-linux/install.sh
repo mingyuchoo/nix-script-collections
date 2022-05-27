@@ -68,6 +68,7 @@ then
     sh <(curl -L https://nixos.org/nix/install) --daemon
     echo "source \"$HOME/.nix-profile/etc/profile.d/nix.sh\"" >> $HOME/.bashrc
     . $HOME/.bashrc
+    
 else
     echo "[NOTICE] Nix is already installed."
 fi
@@ -101,12 +102,17 @@ if [ -d "$HOME/.emacs.d/bin" ] ; then
 fi
 EOF
 else
-    echo "[NOTICE] \`emacs.d/bin\` path is already added to \`.profile\` file."
+    echo "[NOTICE] \`.emacs.d/bin\` path is already added to \`.profile\` file."
 fi
 
 # Install Doom Emacs
 ########################################
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-$HOME/.emacs.d/bin/doom install
-$HOME/.emacs.d/bin/doom sync
+if [ -d $HOME/.emacs.d/bin ]
+then
+    git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+    $HOME/.emacs.d/bin/doom install
+    $HOME/.emacs.d/bin/doom sync
+else
+    echo "[NOTICE] \`.emacs.d/bin\` path is not exists yet."
+fi
 
