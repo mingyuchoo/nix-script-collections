@@ -3,10 +3,6 @@
 let
   haskellVersion = "ghc922";
 
-  python3-with-packages = pkgs.python310.withPackages (ps: with ps; [
-    pip
-  ]);
-
   elm-with-packages = with pkgs.elmPackages; [
     elm
     elm-analyse
@@ -18,7 +14,6 @@ let
 in
   mkShell {
   buildInputs = [
-    pkgs.cmatrix
     pkgs.curl
     pkgs.exa
     pkgs.git
@@ -26,9 +21,7 @@ in
     pkgs.htop
     pkgs.jq
     pkgs.nmon
-    pkgs.nnn
     pkgs.p7zip
-    pkgs.pgcli
     pkgs.nettools
     pkgs.shellcheck
     pkgs.sysstat
@@ -40,7 +33,6 @@ in
     # editor
     pkgs.emacs28-nox
     pkgs.vim
-    pkgs.vifm
 
     # java
     pkgs.jdk11
@@ -71,6 +63,9 @@ in
     pkgs.ocamlPackages.ocaml
     pkgs.opam
 
+    # julia
+    pkgs.julia_17-bin
+
     # zig
     pkgs.zig
 
@@ -81,19 +76,15 @@ in
     pkgs.nodejs-16_x
     pkgs.yarn
 
-    # python
-    pkgs.python2Full
-    python3-with-packages
-
     # Docker
     pkgs.docui
 
-    # ansible
-    pkgs.ansible
+    # ansible (using python3.9.x)
+    #pkgs.ansible
 
-    # aws
-    pkgs.awscli2
-    pkgs.aws-sam-cli
+    # aws (using python3.9.x)
+    #pkgs.awscli2
+    #pkgs.aws-sam-cli
   ];
 
   shellHook = ''
