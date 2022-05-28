@@ -6,6 +6,9 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
+sudo apt install -y git
+sudo apt install -y vim
+
 # Install OpenSSH Server
 ########################################
 if [ -z "$(pidof sshd)" ]
