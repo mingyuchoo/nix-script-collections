@@ -15,14 +15,15 @@ in
   mkShell {
   buildInputs = [
     pkgs.curl
-    pkgs.exa
+    pkgs.fx
     pkgs.git
     pkgs.hurl
     pkgs.htop
     pkgs.jq
+    pkgs.nettools
     pkgs.nmon
     pkgs.p7zip
-    pkgs.nettools
+    pkgs.rename
     pkgs.shellcheck
     pkgs.sysstat
     pkgs.tmux
