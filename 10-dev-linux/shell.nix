@@ -22,6 +22,7 @@ in
     pkgs.jq
     pkgs.nettools
     pkgs.nmon
+    pkgs.nnn
     pkgs.p7zip
     pkgs.rename
     pkgs.shellcheck
