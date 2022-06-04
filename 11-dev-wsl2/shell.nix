@@ -39,7 +39,7 @@ in
   mkShell {
   buildInputs = [
     pkgs.curl
-    pkgs.exa
+    pkgs.fx
     pkgs.git
     pkgs.hurl
     pkgs.htop
@@ -47,8 +47,10 @@ in
     pkgs.nmon
     pkgs.nnn
     pkgs.p7zip
+    pkgs.rename
     pkgs.nettools
     pkgs.sysstat
+    pkgs.tmux
     pkgs.traceroute
     pkgs.tree
 
@@ -85,15 +87,21 @@ in
     pkgs.ocamlPackages.ocaml
     pkgs.opam
 
+    # julia
+    pkgs.julia_17-bin
+
+    # zig
+    pkgs.zig
+
     # podman
-    dockerCompat
-    pkgs.podman  # Docker compat
-    pkgs.runc    # Container runtime
-    pkgs.conmon  # Container runtime monitor
-    pkgs.skopeo  # Interact with container registry
-    pkgs.slirp4netns     # User-mode networking for unprivileged namespaces
-    pkgs.fuse-overlayfs  # CoW for images, much faster than default vfs
-    pkgs.podman-compose  # alternative for docker-compose
+    #dockerCompat
+    #pkgs.podman  # Docker compat
+    #pkgs.runc    # Container runtime
+    #pkgs.conmon  # Container runtime monitor
+    #pkgs.skopeo  # Interact with container registry
+    #pkgs.slirp4netns     # User-mode networking for unprivileged namespaces
+    #pkgs.fuse-overlayfs  # CoW for images, much faster than default vfs
+    #pkgs.podman-compose  # alternative for docker-compose
 
     # terraform
     pkgs.terraform
@@ -102,16 +110,12 @@ in
     pkgs.nodejs-16_x
     pkgs.yarn
 
-    # python
-    pkgs.python310
-    pkgs.python310Packages.pip
+    # ansible (using python3.9.x)
+    #pkgs.ansible
 
-    # ansible
-    pkgs.ansible
-
-    # aws
-    pkgs.awscli2
-    pkgs.aws-sam-cli
+    # aws (using python3.9.x)
+    #pkgs.awscli2
+    #pkgs.aws-sam-cli
   ];
 
   shellHook = ''
