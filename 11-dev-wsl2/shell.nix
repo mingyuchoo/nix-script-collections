@@ -93,6 +93,9 @@ in
     # zig
     pkgs.zig
 
+    # docker
+    pkgs.docui
+
     # podman
     #dockerCompat
     #pkgs.podman  # Docker compat
