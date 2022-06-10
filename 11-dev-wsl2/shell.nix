@@ -53,6 +53,7 @@ in
     pkgs.tmux
     pkgs.traceroute
     pkgs.tree
+    pkgs.xclip
 
     # editor
     pkgs.emacs28-nox
