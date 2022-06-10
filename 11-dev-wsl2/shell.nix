@@ -87,6 +87,12 @@ in
     pkgs.ocamlPackages.ocaml
     pkgs.opam
 
+    # erlang
+    pkgs.erlang
+
+    # elixir
+    pkgs.elixir
+
     # julia
     pkgs.julia_17-bin
 
