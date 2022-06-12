@@ -169,9 +169,9 @@ $ ./HelloWorld.hs
 Hello World
 ```
 
-# Many stylies of `default.nix`
+# Many styles of `default.nix`
 
-## `with` expresion style
+## `with` expression style
 
 ```nix
 with import <nixpkgs> {};
@@ -194,7 +194,7 @@ with import <nixpkgs> {};
       }
 ```
 
-## `let ... in ...` expresion style
+## `let ... in ...` expression style
 
 ```nix
 let
