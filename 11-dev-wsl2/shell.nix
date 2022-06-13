@@ -55,7 +55,7 @@ in
     pkgs.tmux
     pkgs.traceroute
     pkgs.tree
-    pkgs.xclip
+    pkgs.visidata
 
     # editor
     pkgs.emacs28-nox

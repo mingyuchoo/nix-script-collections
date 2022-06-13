@@ -32,6 +32,7 @@ in
     pkgs.tmux
     pkgs.traceroute
     pkgs.tree
+    pkgs.visidata
     pkgs.xclip
 
     # editor
