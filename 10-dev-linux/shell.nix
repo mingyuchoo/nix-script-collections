@@ -15,6 +15,7 @@ in
   mkShell {
   buildInputs = [
     pkgs.curl
+    pkgs.flyway
     pkgs.fx
     pkgs.git
     pkgs.hurl
@@ -26,6 +27,7 @@ in
     pkgs.p7zip
     pkgs.rename
     pkgs.shellcheck
+    pkgs.sqlite
     pkgs.sysstat
     pkgs.tmux
     pkgs.traceroute
