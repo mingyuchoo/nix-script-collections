@@ -6,8 +6,7 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-sudo apt install -y git
-sudo apt install -y vim
+sudo apt install -y curl git vim
 
 # Install OpenSSH Server
 ########################################
