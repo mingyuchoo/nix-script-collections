@@ -99,7 +99,7 @@ in
   ];
 
   shellHook = ''
-    PS1="\n\[\033[1;36m\][nix develop:\w]\$ \[\033[0m\]"
+    PS1="\n\[\033[1;36m\][nix develop:\w]\n\$ \[\033[0m\]"
     echo "---------------------------------------------"
     echo "Great!, Nix packages were built successfully."
     echo "---------------------------------------------"
