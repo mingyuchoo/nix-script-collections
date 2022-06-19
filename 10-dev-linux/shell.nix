@@ -100,6 +100,7 @@ in
 
   shellHook = ''
     PS1="\n\[\033[1;36m\][nix develop:\w]\n\$ \[\033[0m\]"
+    export EDITOR=emacs
     echo "---------------------------------------------"
     echo "Great!, Nix packages were built successfully."
     echo "---------------------------------------------"
