@@ -65,6 +65,9 @@ in
     pkgs.nodejs-16_x
     pkgs.yarn
 
+    # deno
+    pkgs.deno
+
     # ansible
     pkgs.ansible
 

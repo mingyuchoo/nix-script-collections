@@ -122,6 +122,9 @@ in
     pkgs.nodejs-16_x
     pkgs.yarn
 
+    # deno
+    pkgs.deno
+
     # ansible (using python3.9.x)
     #pkgs.ansible
 
