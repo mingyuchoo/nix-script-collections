@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }: with pkgs;
 
 let
-  haskellVersion = "ghc923";
+  haskellVersion = "ghc922";
 
   elm-with-packages = with pkgs.elmPackages; [
     elm

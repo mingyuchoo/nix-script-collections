@@ -108,7 +108,7 @@ ui = str "Hello, World!"
 # shell.nix
 let
     pkgs = import <nixpkgs> {};
-    ghc = pkgs.haskell.packages.ghc923.ghcWithPackages (ps: [ ps.brick ]);
+    ghc = pkgs.haskell.packages.ghc922.ghcWithPackages (ps: [ ps.brick ]);
 in
     with pkgs;
     mkShell {
@@ -152,7 +152,7 @@ ui = str "Hello, World!"
 # shell.nix
 let
     pkgs = import <nixpkgs> {};
-    ghc = pkgs.haskell.packages.ghc923.ghcWithPackages (ps: [ ps.brick ]);
+    ghc = pkgs.haskell.packages.ghc922.ghcWithPackages (ps: [ ps.brick ]);
 in
     pkgs.stdenv.mkDerivation {
         name = "HelloWorld";
@@ -176,7 +176,7 @@ Hello World
 ```nix
 with import <nixpkgs> {};
   let
-    version = "ghc923";
+    version = "ghc922";
   in
       stdenv.mkDerivation rec {
         name = "<project-name>";
