@@ -87,6 +87,9 @@ in
     pkgs.nodejs-16_x
     pkgs.yarn
 
+    # deno
+    pkgs.deno
+
     # Docker
     pkgs.docui
 
