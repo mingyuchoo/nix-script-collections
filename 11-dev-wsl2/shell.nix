@@ -133,6 +133,7 @@ in
   shellHook = ''
     PS1="\n\[\033[1;36m\][nix develop:\W]\$ \[\033[0m\]"
     export EDITOR=emacs
+    export PATH="$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
     echo "---------------------------------------------"
     echo "Great!, Nix packages were built successfully."
     echo "---------------------------------------------"
