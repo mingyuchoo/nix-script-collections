@@ -17,6 +17,7 @@ in
   buildInputs = [
     pkgs.curl
     pkgs.exa
+    pkgs.fx
     pkgs.git
     pkgs.hurl
     pkgs.htop
@@ -24,6 +25,7 @@ in
     pkgs.nnn
     pkgs.p7zip
     pkgs.tree
+    pkgs.visidata
 
     # editor
     pkgs.emacs28-nox
@@ -68,12 +70,12 @@ in
     # deno
     pkgs.deno
 
-    # ansible
-    pkgs.ansible
+    ## ansible
+    #pkgs.ansible
 
-    # aws
-    pkgs.awscli2
-    pkgs.aws-sam-cli
+    ## aws
+    #pkgs.awscli2
+    #pkgs.aws-sam-cli
   ];
 
   shellHook = ''
