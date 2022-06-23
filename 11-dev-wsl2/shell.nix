@@ -143,6 +143,9 @@ in
 
     PS1="\n\[\033[1;36m\][nix develop:\w]\n\$ \[\033[0m\]"
 
+    npm config set strict-ssl false -g
+    npm config set registry http://registry.npmjs.org/
+
     echo "---------------------------------------------"
     echo "Great!, Nix packages were built successfully."
     echo "---------------------------------------------"
