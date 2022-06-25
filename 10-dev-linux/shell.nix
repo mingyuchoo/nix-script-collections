@@ -21,6 +21,7 @@ in
     pkgs.hurl
     pkgs.htop
     pkgs.jq
+    pkgs.lynx
     pkgs.nettools
     pkgs.nmon
     pkgs.nnn
