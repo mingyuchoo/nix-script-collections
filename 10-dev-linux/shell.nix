@@ -8,6 +8,7 @@ let
     elm-analyse
     elm-doc-preview
     elm-format
+    elm-language-server
     elm-live
     elm-test
   ];
