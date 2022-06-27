@@ -8,6 +8,7 @@ let
     elm-analyse
     elm-doc-preview
     elm-format
+    elm-language-server
     elm-live
     elm-test
   ];
@@ -79,8 +80,15 @@ in
   ];
 
   shellHook = ''
-    PS1="\n\[\033[1;36m\][nix develop:\w]\$ \[\033[0m\]"
+    mkdir -p $HOME/.npm-packages/bin
+    mkdir -p $HOME/.npm-packages/lib/node_modules
+
+    export PATH="$HOME/.npm-packages/bin:$PATH"
+    export NODE_PATH="$HOME/.npm-packages/lib/node_modules"
     export EDITOR=emacs
+
+    PS1="\n\[\033[1;36m\][nix develop:\w]\n\$ \[\033[0m\]"
+
     echo "---------------------------------------------"
     echo "Great!, Nix packages were built successfully."
     echo "---------------------------------------------"
