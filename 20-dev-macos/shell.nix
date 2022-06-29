@@ -23,6 +23,7 @@ in
     pkgs.hurl
     pkgs.htop
     pkgs.jq
+    pkgs.cmatrix
     pkgs.nnn
     pkgs.p7zip
     pkgs.tree
