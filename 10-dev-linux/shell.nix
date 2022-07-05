@@ -76,6 +76,10 @@ in
     # elixir
     pkgs.elixir
 
+    # clisp
+    pkgs.clisp
+    pkgs.clisp-tip
+
     # julia
     pkgs.julia_17-bin
 
