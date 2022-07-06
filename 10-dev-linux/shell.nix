@@ -39,6 +39,7 @@ in
 
     # editor
     pkgs.emacs28-nox
+    pkgs.helix
     pkgs.vim
 
     # java
