@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="https://github.com/mingyuchoo/nix-script-collections/issues"><img alt="Issues" src="https://img.shields.io/github/issues/mingyuchoo/nix-script-collections?color=appveyor" /></a>
+  <a href="https://github.com/mingyuchoo/nix-script-collections/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/mingyuchoo/nix-script-collections?color=appveyor" /></a>
+</p>
+
 # nix-script-collections
 
 ## Prerequisite
@@ -11,7 +16,7 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 ## Install flakes
 
-Edit `/etc/nix/nix.conf` if you installed Nix as `Multi-user` or 
+Edit `/etc/nix/nix.conf` if you installed Nix as `Multi-user` or
 create and edit `~/.config/nix/nix.conf` if you installed Nix as `Single-user`
 
 and add:
