@@ -3,8 +3,9 @@
 haskell.lib.buildStackProject {
 	name ="<project-name>";
 	buildInputs = [
-		zlib
 		glpk
+		gmp
 		pcre
+		zlib
 	];
 }

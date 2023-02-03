@@ -22,6 +22,9 @@
             # hPkgs.retrie       # Haskell refactoring tool
             # hPkgs.cabal-install
             stack-wrapped
+            pkgs.glpk
+            pkgs.gmp
+            pkgs.pcre
             pkgs.zlib            # External C library needed by some Haskell packages
           ];
 
