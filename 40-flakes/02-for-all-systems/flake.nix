@@ -12,31 +12,78 @@
         "aarch64-darwin"
       ];
     in {
-      #overlay = (final: prev: {});
+    # Executed by `nix flake check`
+    #checks."<system>"."<name>" = derivation;
 
-      # executed by `nix run .#name`
-      #defaultApp = forAllSystems (system: {});
+    # Executed by `nix build .#<name>`
+    #packages."<system>"."<name>" = derivation;
 
-      # executed by `nix run`
-      #apps = forAllSystems (system: {});
+    # Executed by `nix build .`
+    #packages."<system>".default = derivation;
+    packages = forAllSystems (system: {
+        default = derivation {
+            name = "my-name";
+            builder = "my-builder";
+            system = "${system}";
+          };
+      }
+    );
 
-      # executed by `nix build`
-      #defaultPackage = forAllSystems (system: {});
+    # Executed by `nix run .#<name>`
+    #apps."<system>"."<name>" = {
+    #  type = "app";
+    #  program = "<store-path>";
+    #};
 
-      # executed by `nix build .#name`
-      #packages = forAllSystems (system: {});
+    # Executed by `nix run . -- <args?>`
+    #apps."<system>".default = { type = "app"; program = "..."; };
 
-      # executed by `nix develop .#name`
-      #devShells = forAllSystems (system: {});
+    # Formatter (alejandra, nixfmt or nixpkgs-fmt)
+    #formatter."<system>" = derivation;
 
-      # executed by `nix develop`
-      devShell = forAllSystems (system:
-        nixpkgs.legacyPackages.${system}.mkShell {
-          buildInputs = [ nixpkgs.legacyPackages.${system}.ripgrep ];
-          shellHook = ''
-            echo "shell with ripgrep"
-          '';
-        }
-      );
-    };
+    # Used for nixpkgs packages, also accessible via `nix build .#<name>`
+    #legacyPackages."<system>"."<name>" = derivation;
+
+    # Overlay, consumed by other flakes
+    #overlays."<name>" = final: prev: { };
+
+    # Default overlay
+    #overlays.default = {};
+
+    # Nixos module, consumed by other flakes
+    #nixosModules."<name>" = { config }: { options = {}; config = {}; };
+
+    # Default module
+    #nixosModules.default = {};
+
+    # Used with `nixos-rebuild --flake .#<hostname>`
+    # nixosConfigurations."<hostname>".config.system.build.toplevel must be a derivation
+    #nixosConfigurations."<hostname>" = {};
+
+    # Used by `nix develop .#<name>`
+    #devShells."<system>"."<name>" = derivation;
+
+    # Used by `nix develop`
+    #devShells."<system>".default = derivation;
+    devShells = forAllSystems (system: {
+      default = nixpkgs.legacyPackages.${system}.mkShell {
+        buildInputs = [ nixpkgs.legacyPackages.${system}.ripgrep ];
+        shellHook = ''
+          echo "shell with ripgrep"
+        '';
+      };}
+    );
+
+    # Hydra build jobs
+    #hydraJobs."<attr>"."<system>" = derivation;
+
+    # Used by `nix flake init -t <flake>#<name>`
+    #templates."<name>" = {
+    #  path = "<store-path>";
+    #  description = "template description goes here?";
+    #};
+
+    # Used by `nix flake init -t <flake>`
+    #templates.default = { path = "<store-path>"; description = ""; };
+  };
 }

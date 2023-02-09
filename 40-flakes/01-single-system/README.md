@@ -3,3 +3,7 @@
 ``` bash
 $ nix flake show
 ```
+
+## References
+
+-<https://nixos.wiki/wiki/Flakes>

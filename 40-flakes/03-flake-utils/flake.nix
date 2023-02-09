@@ -7,30 +7,81 @@
   outputs = {self, nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
           rec {
-            #overlay = (final: prev: {});
+            # ------
 
-            # executed by `nix run .#name`
-            #defaultApp = {};
 
-            # executed by `nix run`
-            #apps = {};
+            # Executed by `nix flake check`
+            #checks."<system>"."<name>" = derivation;
 
-            # executed by `nix build`
-            #defaultPackage = {};
+            # Executed by `nix build .#<name>`
+            #packages."<system>"."<name>" = derivation;
 
-            # executed by `nix build .#name`
-            #packages = {};
-
-            # executed by `nix develop .#name`
-            #devShells = {};
-
-            # executed by `nix develop`
-            devShell = nixpkgs.legacyPackages.${system}.mkShell {
-              buildInputs = [ nixpkgs.legacyPackages.${system}.ripgrep ];
-              shellHook = ''
-                echo "shell with ripgrep"
-              '';
+            # Executed by `nix build .`
+            #packages."<system>".default = derivation;
+            packages = {
+              default = derivation {
+                name = "my-name";
+                builder = "my-builder";
+                system = "${system}";
+              };
             };
+
+            # Executed by `nix run .#<name>`
+            #apps."<system>"."<name>" = {
+            #  type = "app";
+            #  program = "<store-path>";
+            #};
+
+            # Executed by `nix run . -- <args?>`
+            #apps."<system>".default = { type = "app"; program = "..."; };
+
+            # Formatter (alejandra, nixfmt or nixpkgs-fmt)
+            #formatter."<system>" = derivation;
+
+            # Used for nixpkgs packages, also accessible via `nix build .#<name>`
+            #legacyPackages."<system>"."<name>" = derivation;
+
+            # Overlay, consumed by other flakes
+            #overlays."<name>" = final: prev: { };
+
+            # Default overlay
+            #overlays.default = {};
+
+            # Nixos module, consumed by other flakes
+            #nixosModules."<name>" = { config }: { options = {}; config = {}; };
+
+            # Default module
+            #nixosModules.default = {};
+
+            # Used with `nixos-rebuild --flake .#<hostname>`
+            # nixosConfigurations."<hostname>".config.system.build.toplevel must be a derivation
+            #nixosConfigurations."<hostname>" = {};
+
+            # Used by `nix develop .#<name>`
+            #devShells."<system>"."<name>" = derivation;
+
+            # Used by `nix develop`
+            #devShells."<system>".default = derivation;
+            devShells = {
+              default = nixpkgs.legacyPackages.${system}.mkShell {
+                buildInputs = [ nixpkgs.legacyPackages.${system}.ripgrep ];
+                shellHook = ''
+                  echo "shell with ripgrep"
+                '';
+              };
+            };
+
+            # Hydra build jobs
+            #hydraJobs."<attr>"."<system>" = derivation;
+
+            # Used by `nix flake init -t <flake>#<name>`
+            #templates."<name>" = {
+            #  path = "<store-path>";
+            #  description = "template description goes here?";
+            #};
+
+            # Used by `nix flake init -t <flake>`
+            #templates.default = { path = "<store-path>"; description = ""; };
           }
         );
 }
