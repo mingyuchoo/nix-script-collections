@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }: with pkgs;
 
 let
-  haskellVersion = "ghc922";
+  haskellVersion = "ghc94";
 
   elm-with-packages = with pkgs.elmPackages; [
     elm
@@ -117,7 +117,7 @@ in
     export EDITOR=emacs
 
     PS1="\n\[\033[1;36m\][nix develop:\w]\n\$ \[\033[0m\]"
-    
+
     echo "---------------------------------------------"
     echo "Great!, Nix packages were built successfully."
     echo "---------------------------------------------"
