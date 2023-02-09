@@ -8,19 +8,21 @@
     #overlay = (final: prev: {});
 
     # executed by `nix run .#name`
-    #defaultApp = forAllSystems (system: {});
+    #defaultApp = {};
 
     # executed by `nix run`
-    #apps = forAllSystems (system: {});
+    #apps = {};
 
     # executed by `nix build`
-    #defaultPackage = forAllSystems (system: {});
+    #defaultPackage = {};
 
     # executed by `nix build .#name`
-    #packages = forAllSystems (system: {});
+    #packages = {};
+
+    # executed by `nix develop .#name`
+    #devShells = {};
 
     # executed by `nix develop`
-    #devShell = forAllSystems (system: {});
     devShell = {
       x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.mkShell {
         buildInputs = [ nixpkgs.legacyPackages.x86_64-linux.ripgrep ];
@@ -29,8 +31,5 @@
         '';
       };
     };
-
-    # executed by `nix develop .#name`
-    #devShells = forAllSystems (system: {});
   };
 }
