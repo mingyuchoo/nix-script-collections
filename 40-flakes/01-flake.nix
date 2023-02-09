@@ -2,9 +2,8 @@
   description = "";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs"; };
-    flake-utils = { url = "github:numtide/flake-utils"; };
   };
-  outputs = {self, nixpkgs, flake-utils, ... }: {
+  outputs = {self, nixpkgs, ... }: {
     #overlay = (final: prev: {});
 
     # executed by `nix run .#name`
