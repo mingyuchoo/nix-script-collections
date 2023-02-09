@@ -9,18 +9,17 @@
 
     # Executed by `nix build .#<name>`
     #packages."<system>"."<name>" = derivation;
+    packages = builtins.mapAttrs
+      (system: package: { hello = package.hello; })
+      nixpkgs.legacyPackages;
 
     # Executed by `nix build .`
     #packages."<system>".default = derivation;
-    packages = {
-      x86_64-linux = {
-        default = derivation {
-            name = "my-name";
-            builder = "my-builder";
-            system = "x86_64-linux";
-          };
-      };
-    };
+    #defaultPackage."<system>" = derivation;
+
+    defaultPackage = builtins.mapAttrs
+      (system: package: package.hello)
+      self.packages;
 
     # Executed by `nix run .#<name>`
     #apps."<system>"."<name>" = {
@@ -30,6 +29,10 @@
 
     # Executed by `nix run . -- <args?>`
     #apps."<system>".default = { type = "app"; program = "..."; };
+    #defaultApp."<system>" = { type = "app"; program = "..."; };
+    defaultApp = builtins.mapAttrs
+      (system: package: { type = "hello"; program = "${package}/bin/hello"; })
+      self.defaultPackage;
 
     # Formatter (alejandra, nixfmt or nixpkgs-fmt)
     #formatter."<system>" = derivation;
@@ -58,16 +61,6 @@
 
     # Used by `nix develop`
     #devShells."<system>".default = derivation;
-    devShells = {
-      x86_64-linux = {
-        default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
-          buildInputs = [ nixpkgs.legacyPackages.x86_64-linux.ripgrep ];
-          shellHook = ''
-            echo "shell with ripgrep"
-          '';
-        };
-      };
-    };
 
     # Hydra build jobs
     #hydraJobs."<attr>"."<system>" = derivation;
