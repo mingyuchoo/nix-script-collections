@@ -14,6 +14,10 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 
 # Single-user installation
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
+
+# Add a channel
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+nix-channel --update
 ```
 ## Install flakes
 
