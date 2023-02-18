@@ -1,4 +1,4 @@
-# 32-dev-rust
+# 32-python3
 
 ## Prerequisite
 
@@ -25,6 +25,8 @@ experimental-features = nix-command flakes
 
 ```bash
 nix-shell
+
 # or
+
 nix-shell default.nix
 ```

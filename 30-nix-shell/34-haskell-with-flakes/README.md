@@ -1,4 +1,4 @@
-# 30-dev-haskell-by-stack
+# 34-haskell-with-flakes
 
 ## Run `flake.nix` for set your DEV envonment up
 
@@ -39,6 +39,6 @@ $ nix-shell
 
 ``` bash
 [nix-shell]$ stack run
-# or 
+# or
 [nix-shell]$ stack exec <project-name>-exe
 ```

@@ -1,4 +1,4 @@
-# 31-dev-nodejs
+# 34-haskell
 
 ## Prerequisite
 

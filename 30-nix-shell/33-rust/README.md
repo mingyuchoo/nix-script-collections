@@ -1,4 +1,4 @@
-# 33-dev-haskell
+# 33-rust
 
 ## Prerequisite
 
@@ -25,8 +25,6 @@ experimental-features = nix-command flakes
 
 ```bash
 nix-shell
-
 # or
-
 nix-shell default.nix
 ```
