@@ -10,6 +10,8 @@ in
       pkgs.ocaml-ng.ocamlPackages_latest.ocamlgraph
     ];
     shellHook = ''
+      export EDITOR=emacs
+      eval "$(direnv hook bash)"
       echo "Welcome to nix-shell for OCaml!"
     '';
   }

@@ -10,6 +10,8 @@ in
       pkgs.glibc.static
     ];
     shellHook = ''
+      export EDITOR=emacs
+      eval "$(direnv hook bash)"
       echo "Welcome to nix-shell for C/C++!"
     '';
   }

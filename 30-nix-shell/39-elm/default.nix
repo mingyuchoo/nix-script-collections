@@ -13,6 +13,8 @@ in
       pkgs.elmPackages.elm-test
     ];
     shellHook = ''
+      export EDITOR=emacs
+      eval "$(direnv hook bash)"
       echo "Welcome to nix-shell for Elm!"
     '';
   }

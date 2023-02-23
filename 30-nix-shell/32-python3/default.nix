@@ -9,6 +9,8 @@ in
       pkgs.python311Packages.virtualenv
     ];
     shellHook = ''
+      export EDITOR=emacs
+      eval "$(direnv hook bash)"
       echo "Welcome to nix-shell for Python3!"
     '';
   }

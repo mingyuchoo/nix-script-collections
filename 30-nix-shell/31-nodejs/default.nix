@@ -8,6 +8,8 @@
 #      nodejs-16_x
 #    ];
 #    shellHook = ''
+      export EDITOR=emacs
+      eval "$(direnv hook bash)"
 #      export PATH="$PWD/node_modules/.bin:$PATH"
 #      alias run='npm run'
 #    '';
@@ -25,6 +27,8 @@
 #      nodejs-16_x
 #    ];
 #    shellHook = ''
+      export EDITOR=emacs
+      eval "$(direnv hook bash)"
 #      export PATH="$PWD/node_modules/.bin:$PATH"
 #      alias run='npm run'
 #    '';
@@ -42,8 +46,10 @@ in
       pkgs.nodejs-18_x
     ];
     shellHook = ''
+      export EDITOR=emacs
       export PATH="$PWD/node_modules/.bin:$PATH"
       alias run='npm run'
+      eval "$(direnv hook bash)"
       echo "Welcome to nix-shell for Nodejs"
     '';
   }
