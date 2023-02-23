@@ -8,8 +8,8 @@
 #      nodejs-16_x
 #    ];
 #    shellHook = ''
-      export EDITOR=emacs
-      eval "$(direnv hook bash)"
+#      export EDITOR=emacs
+#      eval "$(direnv hook bash)"
 #      export PATH="$PWD/node_modules/.bin:$PATH"
 #      alias run='npm run'
 #    '';
@@ -27,8 +27,8 @@
 #      nodejs-16_x
 #    ];
 #    shellHook = ''
-      export EDITOR=emacs
-      eval "$(direnv hook bash)"
+#      export EDITOR=emacs
+#      eval "$(direnv hook bash)"
 #      export PATH="$PWD/node_modules/.bin:$PATH"
 #      alias run='npm run'
 #    '';
