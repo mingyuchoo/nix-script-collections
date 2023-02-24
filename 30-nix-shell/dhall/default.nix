@@ -4,10 +4,15 @@ in
   pkgs.stdenv.mkDerivation {
     name = "dhall";
     buildInputs = [
-      pkgs.gcc
-      pkgs.cmake
-      pkgs.glibc
-      pkgs.glibc.static
+      pkgs.haskellPackages.dhall
+      pkgs.haskellPackages.dhall-bash
+      pkgs.haskellPackages.dhall-docs
+      pkgs.haskellPackages.dhall-json
+      pkgs.haskellPackages.dhall-lsp-server
+      pkgs.haskellPackages.dhall-nix
+      pkgs.haskellPackages.dhall-openapi
+      pkgs.haskellPackages.dhall-toml
+      pkgs.haskellPackages.dhall-yaml
     ];
     shellHook = ''
       export EDITOR=emacs
