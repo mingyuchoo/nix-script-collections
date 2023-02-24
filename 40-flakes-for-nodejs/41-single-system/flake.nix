@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "A very basic flake for nodejs";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs"; };
   };
@@ -15,7 +15,7 @@
     packages = {
       x86_64-linux = {
         default = derivation {
-            name = "my-name";
+            name = "my-nodejs";
             builder = "my-builder";
             system = "x86_64-linux";
           };
@@ -61,9 +61,9 @@
     devShells = {
       x86_64-linux = {
         default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
-          buildInputs = [ nixpkgs.legacyPackages.x86_64-linux.ripgrep ];
+          buildInputs = [ nixpkgs.legacyPackages.x86_64-linux.nodejs ];
           shellHook = ''
-            echo "shell with ripgrep"
+            echo "shell with nodejs"
           '';
         };
       };

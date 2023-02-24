@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "A very basic flake for nodejs";
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs"; };
   };
@@ -22,7 +22,7 @@
     #packages."<system>".default = derivation;
     packages = forAllSystems (system: {
         default = derivation {
-            name = "my-name";
+            name = "my-nodejs";
             builder = "my-builder";
             system = "${system}";
           };
@@ -67,9 +67,9 @@
     #devShells."<system>".default = derivation;
     devShells = forAllSystems (system: {
       default = nixpkgs.legacyPackages.${system}.mkShell {
-        buildInputs = [ nixpkgs.legacyPackages.${system}.ripgrep ];
+        buildInputs = [ nixpkgs.legacyPackages.${system}.nodejs ];
         shellHook = ''
-          echo "shell with ripgrep"
+          echo "shell with nodejs"
         '';
       };}
     );
