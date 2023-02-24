@@ -1,4 +1,4 @@
-# 34-haskell
+# nix-shell for Haskell
 
 ## Prerequisite
 

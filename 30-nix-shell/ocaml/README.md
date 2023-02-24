@@ -1,4 +1,4 @@
-# 35-ocaml
+# nix-shell for OCaml
 
 ## Prerequisite
 

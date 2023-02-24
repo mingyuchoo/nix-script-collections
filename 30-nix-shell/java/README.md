@@ -1,4 +1,4 @@
-# 37-java
+# nix-shell for Java
 
 ## Prerequisite
 

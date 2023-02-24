@@ -1,4 +1,4 @@
-# 39-elm
+# nix-shell for Elm
 
 ## Prerequisite
 

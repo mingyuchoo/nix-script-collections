@@ -1,4 +1,4 @@
-# 31-nodejs
+# nix-shell for Nodejs
 
 ## Prerequisite
 

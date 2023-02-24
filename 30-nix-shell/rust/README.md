@@ -1,4 +1,4 @@
-# 33-rust
+# nix-shell for Rust
 
 ## Prerequisite
 

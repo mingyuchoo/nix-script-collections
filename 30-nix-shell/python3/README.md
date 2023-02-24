@@ -1,4 +1,4 @@
-# 32-python3
+# nix-shell for Python3
 
 ## Prerequisite
 

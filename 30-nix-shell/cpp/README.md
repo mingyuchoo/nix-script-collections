@@ -1,4 +1,4 @@
-# 38-cpp
+# nix-shell for C/C++
 
 ## Prerequisite
 
