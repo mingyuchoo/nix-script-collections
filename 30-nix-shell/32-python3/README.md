@@ -30,3 +30,18 @@ nix-shell
 
 nix-shell default.nix
 ```
+
+## How to create python project
+
+```bash
+$ nix-shell
+$ mkdir <project-name>
+$ cd <project-name>
+$ python -m venv venv
+$ source ./venv/bin/activate
+$ python -m pip install behave
+$ python -m pip install coverage
+$ python -m pip install pydantic
+$ pythom -m list
+$ python -m pip freeze > requirements.txt
+```
