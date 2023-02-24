@@ -4,7 +4,7 @@
     nixpkgs = { url = "github:NixOS/nixpkgs"; };
     flake-utils = { url = "github:numtide/flake-utils"; };
   };
-  outputs = {self, nixpkgs, flake-utils, ... }:
+  outputs = {self, nixpkgs, flake-utils}:
     flake-utils.lib.eachDefaultSystem (system:
           rec {
             # Executed by `nix flake check`

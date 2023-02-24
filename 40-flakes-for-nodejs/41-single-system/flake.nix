@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs"; };
   };
-  outputs = {self, nixpkgs, ... }: {
+  outputs = {self, nixpkgs}: {
     # Executed by `nix flake check`
     #checks."<system>"."<name>" = derivation;
 

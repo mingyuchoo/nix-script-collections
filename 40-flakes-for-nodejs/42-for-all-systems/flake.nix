@@ -3,7 +3,7 @@
   inputs = {
     nixpkgs = { url = "github:NixOS/nixpkgs"; };
   };
-  outputs = {self, nixpkgs, ... }:
+  outputs = {self, nixpkgs}:
     let
       forAllSystems = nixpkgs.lib.genAttrs [
         "x86_64-linux"
