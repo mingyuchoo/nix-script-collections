@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "terraform";
     buildInputs = [
+      pkgs.direnv
       pkgs.terraform
     ];
     shellHook = ''

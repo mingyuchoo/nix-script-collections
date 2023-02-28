@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "c/c++";
     buildInputs = [
+      pkgs.direnv
       pkgs.gcc
       pkgs.cmake
       pkgs.glibc

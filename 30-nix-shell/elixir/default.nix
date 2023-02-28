@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "exlixir";
     buildInputs = [
+      pkgs.direnv
       pkgs.beam.packages.erlangR25.elixir_1_14
     ];
     shellHook = ''

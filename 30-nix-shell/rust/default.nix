@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "rust";
     buildInputs = [
+      pkgs.direnv
       pkgs.clippy
       pkgs.gcc
       pkgs.cargo

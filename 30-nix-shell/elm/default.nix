@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "Elm";
     buildInputs = [
+      pkgs.direnv
       pkgs.elmPackages.elm
       pkgs.elmPackages.elm-analyse
       pkgs.elmPackages.elm-doc-preview

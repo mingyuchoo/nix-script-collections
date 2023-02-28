@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "python3";
     buildInputs = [
+      pkgs.direnv
       pkgs.python311Full
       pkgs.python311Packages.pip
       pkgs.python311Packages.virtualenv

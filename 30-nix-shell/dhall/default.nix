@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "dhall";
     buildInputs = [
+      pkgs.direnv
       pkgs.haskellPackages.dhall
       pkgs.haskellPackages.dhall-bash
       pkgs.haskellPackages.dhall-docs

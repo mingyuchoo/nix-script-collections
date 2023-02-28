@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "ocaml";
     buildInputs = [
+      pkgs.direnv
       pkgs.ocaml-ng.ocamlPackages_latest.ocaml
       pkgs.ocaml-ng.ocamlPackages_latest.findlib
       pkgs.ocaml-ng.ocamlPackages_latest.dune_3

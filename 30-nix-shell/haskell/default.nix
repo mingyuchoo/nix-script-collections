@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "haskell";
     buildInputs = [
+      pkgs.direnv
       pkgs.haskell.compiler.ghc94
       pkgs.haskellPackages.cabal-install
       pkgs.haskellPackages.haskell-language-server

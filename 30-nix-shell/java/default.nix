@@ -4,6 +4,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "java";
     buildInputs = [
+      pkgs.direnv
       pkgs.jdk17
       pkgs.gradle
     ];

@@ -42,6 +42,7 @@ in
   pkgs.stdenv.mkDerivation {
     name = "nodejs";
     buildInputs = [
+      pkgs.direnv
       pkgs.yarn
       pkgs.nodejs-18_x
     ];
