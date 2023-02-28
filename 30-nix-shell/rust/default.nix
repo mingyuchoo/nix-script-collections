@@ -4,10 +4,11 @@ in
   pkgs.stdenv.mkDerivation {
     name = "rust";
     buildInputs = [
-      pkgs.direnv
-      pkgs.clippy
-      pkgs.gcc
       pkgs.cargo
+      pkgs.cargo-watch
+      pkgs.clippy
+      pkgs.direnv
+      pkgs.gcc
       pkgs.rustc
       pkgs.rustfmt
       pkgs.rustup
