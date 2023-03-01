@@ -9,9 +9,8 @@
 #    ];
 #    shellHook = ''
 #      export EDITOR=emacs
-#      eval "$(direnv hook bash)"
 #      export PATH="$PWD/node_modules/.bin:$PATH"
-#      alias run='npm run'
+#      eval "$(direnv hook bash)"
 #    '';
 #  }
 
@@ -28,9 +27,8 @@
 #    ];
 #    shellHook = ''
 #      export EDITOR=emacs
-#      eval "$(direnv hook bash)"
 #      export PATH="$PWD/node_modules/.bin:$PATH"
-#      alias run='npm run'
+#      eval "$(direnv hook bash)"
 #    '';
 #  }
 
@@ -49,7 +47,6 @@ in
     shellHook = ''
       export EDITOR=emacs
       export PATH="$PWD/node_modules/.bin:$PATH"
-      alias run='npm run'
       eval "$(direnv hook bash)"
       echo "Welcome to nix-shell for Nodejs"
     '';
