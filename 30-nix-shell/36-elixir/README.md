@@ -25,8 +25,6 @@ experimental-features = nix-command flakes
 
 ```bash
 nix-shell
-
 # or
-
 nix-shell default.nix
 ```
