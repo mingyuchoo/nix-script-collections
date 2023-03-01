@@ -42,10 +42,9 @@ Edit `.envrc` like this.
 This shell script prevents infinitely recursive execution of commands.
 
 ```bash
-export IS_IN_NIX_SHELL=1
-
-if [ -z $IS_IN_NIX_SHELL ]; then
-  # some command to execute here
-  # ex) cargo watch -x check -x test
+if [[ -z "$IS_IN_NIX_SHELL" ]] ; then
+   export IS_IN_NIX_SHELL=1
+   # add some command to execute here
+   # ex) cargo watch -x check -x test
 fi
 ```
