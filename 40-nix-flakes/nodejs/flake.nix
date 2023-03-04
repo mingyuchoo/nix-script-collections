@@ -16,6 +16,7 @@
             ];
             shellHook = ''
               export EDITOR=emacs
+              export PATH="$PWD/node_modules/.bin:$PATH"
               eval "$(direnv hook bash)"
               echo "Welcome to nix flake for Nodejs"
             '';
