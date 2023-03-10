@@ -22,6 +22,7 @@
               haskellPackages.dhall-yaml
             ];
             shellHook = ''
+              export LANG=C.UTF-8
               export EDITOR=emacs
               eval "$(direnv hook bash)"
               echo "Welcome to nix flake for Dhall"

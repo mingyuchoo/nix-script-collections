@@ -14,6 +14,7 @@
               beam.packages.erlangR25.elixir_1_14
             ];
             shellHook = ''
+              export LANG=C.UTF-8
               export EDITOR=emacs
               eval "$(direnv hook bash)"
               echo "Welcome to nix flake for Elixir"

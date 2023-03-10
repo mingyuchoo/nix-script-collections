@@ -15,6 +15,7 @@
               yarn
             ];
             shellHook = ''
+              export LANG=C.UTF-8
               export EDITOR=emacs
               export PATH="$PWD/node_modules/.bin:$PATH"
               eval "$(direnv hook bash)"
