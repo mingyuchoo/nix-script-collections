@@ -48,3 +48,13 @@ if [[ -z "$IS_IN_NIX_SHELL" ]] ; then
    # ex) cargo watch -x check -x test
 fi
 ```
+## How to create Kotlin project
+
+```bash
+$ mkdir <project-name>
+$ cd <project-name>
+$ echo "fun main() { println("Hello, Kotlin!") }" > main.kt
+$ kotlinc main.kt -include-runtime -d main.jar
+$ java -jar main.jar
+Hello, Kotlin!
+```
