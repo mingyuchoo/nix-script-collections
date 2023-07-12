@@ -24,6 +24,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   # Set your time zone.
   time.timeZone = "Pacific/Honolulu";
 
@@ -84,29 +86,35 @@
     description = "mgch";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      # For web
+      # for Web
       firefox
-      # For desktop
+      # for desktop
       kate
+      akonadi
       plasma5Packages.knotes
-      # For editor
-      emacs29-nox
-      neovim
-      # For Rust
+      # for Editor
+      vscode
+      dbeaver
+      # for Rust
       cargo
       cargo-watch
+      cargo-tauri
+      cargo-lambda
       clippy
       rustc
       rustfmt
       rustup
-      # For Nodejs
+      rust-analyzer
+      # for Nodejs
       nodejs-18_x
-      nodePackages.pnpm
-      # For Java
+      nodePackages_latest.pnpm
+      nodePackages_latest.typescript
+      nodePackages_latest.typescript-language-server
+      # for Java
       coursier
       gradle
       jdk17
-      # For Haskell
+      # for Haskell
       haskell.compiler.ghc962
       haskellPackages.cabal-install
       haskellPackages.haskell-language-server
@@ -116,6 +124,26 @@
       haskellPackages.hindent
       haskellPackages.hlint
       haskellPackages.hoogle
+      # for Lua
+      lua5_4
+      lua-language-server
+      # for OCaml
+      ocaml-ng.ocamlPackages_latest.ocaml
+      ocaml-ng.ocamlPackages_latest.findlib
+      ocaml-ng.ocamlPackages_latest.dune_3
+      ocaml-ng.ocamlPackages_latest.ocamlgraph
+      # for Terraform
+      terraform
+      # for Elm
+      elmPackages.elm
+      elmPackages.elm-analyse
+      elmPackages.elm-doc-preview
+      elmPackages.elm-format
+      elmPackages.elm-language-server
+      elmPackages.elm-live
+      elmPackages.elm-test
+      # for AWS
+      awscli2
     ];
   };
 
@@ -126,9 +154,13 @@
     direnv
     git
     tree
+    ripgrep
     wget
     zip
     unzip
+    # for Editor
+    emacs29-nox
+    neovim
     # for C
     gcc
     cmake
@@ -147,7 +179,19 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+
+  # PostgreSQL
+  services.postgresql.enable = true;
+  services.postgresql.package = pkgs.postgresql_15;
+
+  # MySQL
+  services.mysql.enable = true;
+  services.mysql.package = pkgs.mysql80;
+
+  # Redis
+  services.redis.servers."local-redis".enable = true;
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
