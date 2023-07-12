@@ -106,6 +106,16 @@
       coursier
       gradle
       jdk17
+      # For Haskell
+      haskell.compiler.ghc962
+      haskellPackages.cabal-install
+      haskellPackages.haskell-language-server
+      haskellPackages.stack
+      haskellPackages.stylish-haskell
+      haskellPackages.ghcid
+      haskellPackages.hindent
+      haskellPackages.hlint
+      haskellPackages.hoogle
     ];
   };
 
