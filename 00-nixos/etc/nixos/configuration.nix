@@ -98,6 +98,7 @@
       # for Rust
       cargo
       cargo-watch
+      cargo-modules
       cargo-tauri
       cargo-lambda
       clippy
