@@ -6,6 +6,8 @@ in
     buildInputs = [
       pkgs.cargo
       pkgs.cargo-watch
+      pkgs.cargo-modules
+      pkgs.cargo-lambda
       pkgs.clippy
       pkgs.direnv
       pkgs.gcc
