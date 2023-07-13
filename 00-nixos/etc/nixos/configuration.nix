@@ -200,8 +200,10 @@
   services.mysql.package = pkgs.mysql80;
 
   # Redis
-  services.redis.servers."local-redis".enable = true;
-
+  services.redis.servers."local-redis" = {
+    enable = true;
+    port = 6379;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
