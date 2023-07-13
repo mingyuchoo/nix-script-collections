@@ -162,13 +162,6 @@
     # for Editor
     emacs29-nox
     neovim
-    # for Dev
-    gcc
-    cmake
-    glib
-    glibc
-    glibc.static
-    pkgconfig
     # for iOS
     libimobiledevice
     ifuse
