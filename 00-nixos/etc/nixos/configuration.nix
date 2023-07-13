@@ -167,6 +167,8 @@
     cmake
     glibc
     glibc.static
+    # for Dev
+    pkgconfig
     # for iOS
     libimobiledevice
     ifuse
