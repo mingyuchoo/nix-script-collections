@@ -9,3 +9,10 @@
 - `/etc/nixos/configuration.nix`
 - `/etc/nixos/hardware-configuration.nix`
 
+## How to rebuild
+
+```bash
+nixos-rebuild switch
+nixos-rebuild test
+nixos-rebuild boot
+```
