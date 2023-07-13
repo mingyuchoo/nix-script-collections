@@ -167,6 +167,9 @@
     cmake
     glibc
     glibc.static
+    # for iOS
+    libimobiledevice
+    ifuse
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -178,6 +181,12 @@
   # };
 
   # List services that you want to enable:
+
+  # iOS
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
