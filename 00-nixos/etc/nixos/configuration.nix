@@ -162,12 +162,12 @@
     # for Editor
     emacs29-nox
     neovim
-    # for C
+    # for Dev
     gcc
     cmake
+    glib
     glibc
     glibc.static
-    # for Dev
     pkgconfig
     # for iOS
     libimobiledevice
