@@ -94,12 +94,25 @@
       # for Web
       firefox
       # for desktop
-      kate
       akonadi
+      kate
       plasma5Packages.knotes
+      # for Desktop
+      citrix_workspace_23_02_0
+      discord
+      drawio
+      obsidian
+      slack
+      telegram-desktop
+      zoom-us
       # for Editor
       vscode
       dbeaver
+      # for AWS
+      awscli2
+      # for DropBox
+      maestral
+      maestral-gui
       # for Rust
       cargo
       cargo-watch
@@ -148,8 +161,6 @@
       elmPackages.elm-language-server
       elmPackages.elm-live
       elmPackages.elm-test
-      # for AWS
-      awscli2
     ];
   };
 
@@ -158,15 +169,18 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     direnv
+    emacs29-nox
     git
+    htop
+    jq
+    neovim
+    nnn
+    tmux
     tree
     ripgrep
+    unzip
     wget
     zip
-    unzip
-    # for Editor
-    emacs29-nox
-    neovim
     # for iOS
     libimobiledevice
     ifuse
@@ -174,11 +188,11 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # List services that you want to enable:
 
