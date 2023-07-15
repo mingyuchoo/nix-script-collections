@@ -167,9 +167,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    direnv
+    # for C/C++
+    cmake
+    gcc
+    glib
+    glibc
+    glibc.static
+    # for CLI
     appimage-run
+    direnv
     emacs29-nox
     git
     htop
@@ -180,6 +186,7 @@
     tree
     ripgrep
     unzip
+    # vim
     wget
     zip
     # for iOS
