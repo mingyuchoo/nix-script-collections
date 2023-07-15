@@ -167,12 +167,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # for C/C++
+    # for Dev
     cmake
     gcc
     glib
     glibc
     glibc.static
+    pkg-config
     # for CLI
     appimage-run
     direnv
