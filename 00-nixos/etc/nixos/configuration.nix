@@ -164,6 +164,8 @@
       elmPackages.elm-language-server
       elmPackages.elm-live
       elmPackages.elm-test
+      # for Python
+      python310Full
     ];
   };
 
