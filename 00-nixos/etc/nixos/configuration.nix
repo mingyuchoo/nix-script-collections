@@ -110,9 +110,12 @@
       dbeaver
       # for AWS
       awscli2
+      aws-sam-cli
       # for DropBox
       maestral
       maestral-gui
+      # for Zig
+      zig
       # for Rust
       cargo
       cargo-watch
@@ -169,6 +172,7 @@
   environment.systemPackages = with pkgs; [
     # for Dev
     cmake
+    gnumake42
     gcc
     glib
     glibc
