@@ -122,11 +122,7 @@
       cargo-modules
       cargo-tauri
       cargo-lambda
-      clippy
-      rustc
-      rustfmt
       rustup
-      rust-analyzer
       # for Nodejs
       nodejs-18_x
       nodePackages_latest.pnpm
