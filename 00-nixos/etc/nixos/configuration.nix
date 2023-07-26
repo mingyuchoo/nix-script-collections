@@ -24,10 +24,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
   # Set your time zone.
-  time.timeZone = "Pacific/Honolulu";
+  time.timeZone = "Asia/Seoul";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -89,13 +87,19 @@
   users.users.mgch = {
     isNormalUser = true;
     description = "mgch";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [
       # for Web
       firefox
-      # for desktop
-      akonadi
+      # for Plasma
       kate
+      plasma5Packages.akonadi
+      plasma5Packages.akonadi-notes
+      plasma5Packages.discover
       plasma5Packages.knotes
       # for Desktop
       citrix_workspace_23_02_0
@@ -110,18 +114,16 @@
       dbeaver
       # for AWS
       awscli2
-      aws-sam-cli
       # for DropBox
       maestral
       maestral-gui
       # for Zig
       zig
       # for Rust
-      cargo
-      cargo-watch
+      cargo-lambda
       cargo-modules
       cargo-tauri
-      cargo-lambda
+      cargo-watch
       rustup
       # for Nodejs
       nodejs-18_x
@@ -161,9 +163,14 @@
       elmPackages.elm-live
       elmPackages.elm-test
       # for Python
-      python310Full
+      python311Full
+      # for Docker
+      docui
     ];
   };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -179,7 +186,7 @@
     # for CLI
     appimage-run
     direnv
-    emacs29-nox
+    emacs-nox
     git
     htop
     jq
@@ -195,6 +202,10 @@
     # for iOS
     libimobiledevice
     ifuse
+    fuse3
+    # for Docker
+    docker
+    docker-compose
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -231,8 +242,11 @@
   };
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  # networking.firewall = {
+  #   allowedTCPPorts = [ ... ];
+  #   allowedUDPPorts = [ ... ];
+  # };
+
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -243,9 +257,12 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
+  system.autoUpgrade.enable = true;
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
+
+  virtualisation.docker.enable = true;
 }
