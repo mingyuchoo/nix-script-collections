@@ -179,6 +179,7 @@
     cmake
     gnumake42
     gcc
+    gdb
     glib
     glibc
     glibc.static
