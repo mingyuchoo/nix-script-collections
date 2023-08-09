@@ -94,7 +94,8 @@
     ];
     packages = with pkgs; [
       # for Web
-      firefox
+      brave
+      microsoft-edge
       # for Plasma
       kate
       plasma5Packages.akonadi
@@ -177,6 +178,7 @@
   environment.systemPackages = with pkgs; [
     # for Dev
     cmake
+    ddd
     gnumake42
     gcc
     gdb
@@ -191,6 +193,7 @@
     git
     htop
     jq
+    netcat
     neovim
     nnn
     tmux
