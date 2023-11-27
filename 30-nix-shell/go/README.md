@@ -1,4 +1,4 @@
-# Nix-shell for Go
+# README
 
 ## Prerequisite
 

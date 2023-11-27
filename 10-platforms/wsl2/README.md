@@ -1,4 +1,4 @@
-# 12-wsl2
+# README
 
 ## Prerequisite
 
@@ -56,6 +56,6 @@ nix-repl> pkgs.<<TAB KEY>>
 ...
 ```
 
-# References
+# README
 
 -<https://gist.github.com/adisbladis/187204cb772800489ee3dac4acdd9947>

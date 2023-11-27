@@ -1,4 +1,4 @@
-# 51-haskell
+# README
 
 ## 1. Manually
 
@@ -169,9 +169,9 @@ $ ./HelloWorld.hs
 Hello World
 ```
 
-# Many styles of `default.nix`
+## Many styles of `default.nix`
 
-## `with` expression style
+### `with` expression style
 
 ```nix
 with import <nixpkgs> {};
@@ -194,7 +194,7 @@ with import <nixpkgs> {};
       }
 ```
 
-## `let ... in ...` expression style
+### `let ... in ...` expression style
 
 ```nix
 let
@@ -216,7 +216,7 @@ in
   }
 ```
 
-## function style
+### function style
 
 ```nix
 { pkgs ? import <nixpkgs> {}

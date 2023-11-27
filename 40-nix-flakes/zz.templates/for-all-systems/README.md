@@ -1,4 +1,4 @@
-# 42-for-all-system
+# README
 
 ## How to validate `flake.nix` file
 

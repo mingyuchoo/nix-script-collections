@@ -1,4 +1,4 @@
-# nix-shell for Python3
+# README
 
 ## Prerequisite
 

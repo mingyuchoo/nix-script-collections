@@ -1,4 +1,4 @@
-# 13-macOS
+# README
 
 ## Prerequisite
 
@@ -26,7 +26,7 @@ experimental-features = nix-command flakes
 ```bash
 nix develop
 
-# or
+# README
 
 export NIXPKGS_ALLOW_BROKEN=1
 nix develop --impure

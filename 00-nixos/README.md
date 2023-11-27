@@ -1,4 +1,4 @@
-# NixOS Linux distribution
+# README
 
 ## References
 

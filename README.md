@@ -4,7 +4,7 @@
   <a href="https://github.com/mingyuchoo/nix-script-collections/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/mingyuchoo/nix-script-collections?color=appveyor" /></a>
 </p>
 
-# nix-script-collections
+# README
 
 ## Prerequisite
 

@@ -1,4 +1,4 @@
-# nix-shell for Terraform
+# README
 
 ## Prerequisite
 

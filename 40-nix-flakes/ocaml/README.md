@@ -1,4 +1,4 @@
-# nix-shell for OCaml
+# README
 
 ## Prerequisite
 

@@ -1,4 +1,4 @@
-# nix-shell for Nodejs
+# README
 
 ## Prerequisite
 

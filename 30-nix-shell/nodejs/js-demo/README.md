@@ -1,4 +1,4 @@
-# js-demo
+# README
 
 ## Prerquisite
 

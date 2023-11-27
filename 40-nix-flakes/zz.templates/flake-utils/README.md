@@ -1,4 +1,4 @@
-# 44-flakes-utils
+# README
 
 ## How to validate `flake.nix` file
 
