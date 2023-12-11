@@ -7,3 +7,6 @@ export EDITOR=emacs
 # aliases
 alias n3=nnn
 alias vi=nvim
+
+# hooks
+eval "$(direnv hook bash)"
