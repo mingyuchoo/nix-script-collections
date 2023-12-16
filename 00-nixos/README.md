@@ -24,3 +24,10 @@ sudo nixos-rebuild switch --upgrade  # Upgrade packages with declarative/NixOS
 nix-env -u '*'                       # Upgrade packages with Ad-hoc
 home-manager switch                  # Upgrade packages with Home Manager
 ```
+### Cleaning the nix store
+
+```bash
+sudo nix-store --gc
+sudo nix-collect-garbage
+nix-env --delete-generations old
+```
