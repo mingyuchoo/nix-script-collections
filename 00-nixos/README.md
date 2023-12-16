@@ -16,3 +16,11 @@ nixos-rebuild switch
 nixos-rebuild test
 nixos-rebuild boot
 ```
+## How to update very packages
+
+```bash
+sudo nix-channel --update            # check and set the lastest channel
+sudo nixos-rebuild switch --upgrade  # Upgrade packages with declarative/NixOS
+nix-env -u '*'                       # Upgrade packages with Ad-hoc
+home-manager switch                  # Upgrade packages with Home Manager
+```
