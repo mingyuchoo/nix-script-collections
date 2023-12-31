@@ -102,6 +102,8 @@
       plasma5Packages.akonadi-notes
       plasma5Packages.discover
       plasma5Packages.knotes
+      # for GNOME
+      gnome.gnome-tweaks
       # for Desktop
       citrix_workspace_23_02_0
       discord
@@ -118,6 +120,8 @@
       # for DropBox
       maestral
       maestral-gui
+      # for Bun
+      bun
       # for Zig
       zig
       # for Rust
@@ -164,9 +168,11 @@
       elmPackages.elm-live
       elmPackages.elm-test
       # for Python
-      python311Full
-      # for Docker
-      docui
+      python3
+      python3Packages.pip
+      python3Packages.virtualenv
+      # for Office
+      libreoffice
     ];
   };
 
@@ -210,6 +216,7 @@
     # for Docker
     docker
     docker-compose
+    docui
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -231,26 +238,9 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # PostgreSQL
-  services.postgresql.enable = true;
-  services.postgresql.package = pkgs.postgresql_15;
-
-  # MySQL
-  services.mysql.enable = true;
-  services.mysql.package = pkgs.mysql80;
-
-  # Redis
-  services.redis.servers."local-redis" = {
-    enable = true;
-    port = 6379;
-  };
-
   # Open ports in the firewall.
-  # networking.firewall = {
-  #   allowedTCPPorts = [ ... ];
-  #   allowedUDPPorts = [ ... ];
-  # };
-
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -260,13 +250,13 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
   system.autoUpgrade.enable = true;
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-
+  
   virtualisation.docker.enable = true;
 }
