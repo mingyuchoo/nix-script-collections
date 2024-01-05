@@ -37,7 +37,7 @@ nixos-rebuild switch
 nixos-rebuild test
 nixos-rebuild boot
 ```
-## How to update very packages
+## How to update every packages
 
 ```bash
 sudo nix-channel --update            # check and set the lastest channel
