@@ -105,7 +105,7 @@
       # for GNOME
       gnome.gnome-tweaks
       # for Desktop
-      citrix_workspace_23_02_0
+      citrix_workspace_23_07_0
       discord
       drawio
       obsidian
