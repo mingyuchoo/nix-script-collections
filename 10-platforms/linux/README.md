@@ -35,7 +35,7 @@ nix develop # again
 ### How to search Nix packages using Nix REPL
 
 ```bash
-nix repl '<nixpkgs>'
+nix repl --expr 'import <nixpkgs>{};
 
 Welcome to Nix 2.8.0. Type :? for help.
 
