@@ -8,7 +8,7 @@
       let pkgs = nixpkgs.legacyPackages.${system};
       in
         rec {
-          devShell = pkgs.mkShell {
+          devShells.default = pkgs.mkShell {
             buildInputs = with pkgs; [
               direnv
               beam.packages.erlangR25.elixir_1_14
