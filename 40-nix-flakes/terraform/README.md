@@ -21,12 +21,14 @@ and add:
 experimental-features = nix-command flakes
 ```
 
-## How to enter to nix-shell
+## How use Nix flakes
 
 ```bash
-nix-shell
-# or
-nix-shell default.nix
+nix flake check --all-systems
+nix flake show
+nix run              # run flake.nix script
+nix develop          # enter to nix environment
+```
 ```
 
 ## Try an example configuration for Terraform

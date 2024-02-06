@@ -12,7 +12,7 @@
         "aarch64-darwin"
       ];
     in {
-    # Executed by `nix flake check`
+    # Executed by `nix flake check --all-systems`
     #checks."<system>"."<name>" = derivation;
 
     # Executed by `nix build .#<name>`
@@ -69,7 +69,7 @@
       default = nixpkgs.legacyPackages.${system}.mkShell {
         buildInputs = [ nixpkgs.legacyPackages.${system}.nodejs ];
         shellHook = ''
-          export PS1='\\e[1;34mdev > \\e[0m'
+          export PS1="\\e[1;34mdevelop > \\e[0m"
           echo "shell with nodejs"
         '';
       };}
