@@ -24,6 +24,7 @@
             shellHook = ''
               export LANG=C.UTF-8
               export EDITOR=emacs
+              export PS1='\\e[1;34mdev > \\e[0m'
               eval "$(direnv hook bash)"
               echo "Welcome to nix flake for Dhall"
             '';

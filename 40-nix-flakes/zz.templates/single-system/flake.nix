@@ -63,6 +63,7 @@
         default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
           buildInputs = [ nixpkgs.legacyPackages.x86_64-linux.nodejs ];
           shellHook = ''
+            export PS1='\\e[1;34mdev > \\e[0m'
             echo "shell with nodejs"
           '';
         };
