@@ -4,7 +4,7 @@
 
 -<https://nixos-and-flakes.thiscute.world/nixos-with-flakes/nixos-with-flakes-enabled>
 
-## How to create project using Nix Flakes
+## How to create a project using Nix Flakes
 
 ```bash
 $ mkdir <my-project-name>

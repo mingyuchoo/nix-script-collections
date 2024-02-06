@@ -24,20 +24,21 @@ nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 nix-channel --update
 ```
 
+## Configuration NixOS
 
-## Declarative Configration
+### Declarative Configration
 
 - `/etc/nixos/configuration.nix`
 - `/etc/nixos/hardware-configuration.nix`
 
-## How to rebuild
+### How to rebuild
 
 ```bash
 nixos-rebuild switch
 nixos-rebuild test
 nixos-rebuild boot
 ```
-## How to update every packages
+### How to update every packages
 
 ```bash
 sudo nix-channel --update            # check and set the lastest channel
@@ -45,7 +46,7 @@ sudo nixos-rebuild switch --upgrade  # Upgrade packages with declarative/NixOS
 nix-env -u '*'                       # Upgrade packages with Ad-hoc
 home-manager switch                  # Upgrade packages with Home Manager
 ```
-### Cleaning the nix store
+#### Cleaning the nix store
 
 ```bash
 sudo nix-store --gc
@@ -101,7 +102,6 @@ nix-repl> :q # EXIT
 
 ```nix
 [ v1 v2 v3 ... vn ]
-
 ```
 
 ```nix
@@ -124,7 +124,6 @@ nix-repl> :q # EXIT
   text = "Hello";
   y = f { bla = 456; };
 }
-
 ```
 
 ### Recursive sets
