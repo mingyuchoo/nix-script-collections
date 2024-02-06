@@ -10,7 +10,7 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 
-### Install flakes (optional)
+### Install flakes
 
 Edit `/etc/nix/nix.conf` if you installed Nix as `Multi-user` or
 create and edit `~/.config/nix/nix.conf` if you installed Nix as `Single-user`
