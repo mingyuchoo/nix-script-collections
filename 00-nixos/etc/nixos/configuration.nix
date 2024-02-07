@@ -206,8 +206,8 @@
     tree
     ripgrep
     unzip
-    # vim
     wget
+    xsel
     zip
     # for iOS
     libimobiledevice
