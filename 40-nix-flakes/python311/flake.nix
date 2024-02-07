@@ -8,8 +8,7 @@
   outputs = { self, nixpkgs, }:
     let
       systems = [
-        "aarch64-linux"
-        "aarch64-darwin"
+        "x86_64-linux"
       ];
 
       forAllSystems = f:
@@ -24,7 +23,7 @@
               pkgs.mkShell {
                 buildInputs = with pkgs; [
                   direnv
-                  python311Full
+                  python311
                   python311Packages.pip
                   python311Packages.virtualenv
                 ];
@@ -42,9 +41,14 @@
             let
             in
               pkgs.stdenv.mkDerivation {
-                name = "python311_app";
-                pname = "python311_app";
-                dontBuild = true;
+                pname = "app";
+                version = "1.0";
+                src = self;
+                buildInputs = with pkgs; [ python311 ];
+                installPhase = ''
+                  mkdir -p $out/bin
+                  install -t $out/bin app.py
+                '';
               };
         });
       };

@@ -10,6 +10,20 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 
+## References
+
+- <https://www.tweag.io/blog/2020-05-25-flakes/>
+
+## Build & Run
+
+```bash
+git add .
+nix build
+./result/bin/app.py
+# nix run # TODO
+```
+
+
 ### Install flakes
 
 Edit `/etc/nix/nix.conf` if you installed Nix as `Multi-user` or
@@ -21,7 +35,7 @@ and add:
 experimental-features = nix-command flakes
 ```
 
-## How use Nix flakes
+### How use Nix flakes
 
 ```bash
 nix flake check --all-systems
@@ -47,7 +61,7 @@ $ python -m pip freeze > requirements.txt
 ```
 
 
-## How to use `direnv`
+### How to use `direnv`
 
 Create `.envrc` file for `direnv`
 
