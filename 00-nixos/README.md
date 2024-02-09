@@ -27,8 +27,15 @@ $ home-manager switch                  # Upgrade packages with Home Manager
 ### Cleaning the nix store
 
 ```bash
+# for root
 $ sudo nix-env --list-generations
 $ sudo nix-env --delete-generations old
 $ sudo nix-collect-garbage -d
 $ sudo nix-store --gc
+
+# for current user
+$ nix-env --list-generations
+$ nix-env --delete-generations old
+$ nix-collect-garbage -d
+$ nix-store --gc
 ```
