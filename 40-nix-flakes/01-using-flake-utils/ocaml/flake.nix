@@ -1,5 +1,5 @@
 {
-  description = "A basic devShell using flake-utils for OCaml";
+  description = "A basic flakes using flake-utils for OCaml";
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
@@ -24,7 +24,7 @@
               export EDITOR=emacs
               export PS1="\\e[1;36m(develop) \u@\h:\W > \\e[0m"
               eval "$(direnv hook bash)"
-              echo "Welcome to nix flake for OCaml"
+              echo "Welcome to Nix flake for OCaml"
             '';
           };
         }

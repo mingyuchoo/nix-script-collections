@@ -1,5 +1,5 @@
 {
-  description = "A basic flakes using nixpkgs for Python3";
+  description = "A basic flakes using nixpkgs for Rust";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
@@ -16,16 +16,15 @@
         nixpkgs.lib.genAttrs systems
           (system: f { pkgs = import nixpkgs { inherit system; }; });
 
-      packageName = "myapp";
+      packageName = "my-rust-app";
     in
       {
         devShells = forAllSystems ({ pkgs }: {
           default = pkgs.mkShell {
                 buildInputs = with pkgs; [
                   direnv
-                  python3
-                  python3Packages.pip
-                  python3Packages.virtualenv
+                  cargo
+                  rustc
                 ];
                 shellHook = ''
                   export LANG=C.UTF-8
@@ -37,22 +36,17 @@
           };
         });
         packages = forAllSystems ({ pkgs }: {
-          default = pkgs.stdenv.mkDerivation {
-            name = "${packageName}";
+          default = pkgs.rustPlatform.buildRustPackage {
             pname = "${packageName}";
-            version = "1.0";
+            version = "0.1.0";
             src = self;
-            buildInputs = with pkgs; [ python3 ];
-            installPhase = ''
-              mkdir -p $out/bin
-              install -t $out/bin app.py
-            '';
+            cargoLock.lockFile = ./Cargo.lock;
             };
         });
         apps = forAllSystems ({ pkgs }: {
           default = {
             type = "app";
-            program = "${self.packages.${pkgs.system}.default}/bin/app.py";
+            program = "${self.packages.${pkgs.system}.default}/bin/${packageName}";
           };
         });
       };
