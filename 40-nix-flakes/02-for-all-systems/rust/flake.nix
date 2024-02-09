@@ -31,7 +31,7 @@
                   export EDITOR=emacs
                   export PS1="\\e[1;36m(develop) \u@\h:\W > \\e[0m"
                   eval "$(direnv hook bash)"
-                  echo "Welcome to Nix flake for Python3"
+                  echo "Welcome to Nix flake for Rust"
                 '';
           };
         });

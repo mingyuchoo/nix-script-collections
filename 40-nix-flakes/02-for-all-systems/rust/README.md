@@ -10,19 +10,34 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 
-## References
+## How to create Rust project
 
-- <https://www.tweag.io/blog/2020-05-25-flakes/>
 
-## Build & Run
 
 ```bash
-git add .
-nix build
-./result/bin/app.py
-# nix run # TODO
+$ cargo new <project-name>
+$ cd <project-name>
+$ cargo fetch   # This command populate the `Carogo.lock` file
+$ git add Cargo.lock
+$ cargo check
+$ cargo build --release
+$ cargo run --release
 ```
 
+## How to create `flake.nix` file
+
+Please reference below links
+
+- <https://hoverbear.org/blog/a-flake-for-your-crate/>
+- <https://dev.to/misterio/how-to-package-a-rust-app-using-nix-3lh3>
+
+## Build & Run with Nix flake
+
+```bash
+$ git add .
+$ nix build
+$ nix run
+```
 
 ### Install flakes
 
@@ -38,36 +53,19 @@ experimental-features = nix-command flakes
 ### How use Nix flakes
 
 ```bash
-nix flake check --all-systems
-nix flake show
-nix run              # run flake.nix script
-nix develop          # enter to nix environment
+$ nix flake check --all-systems
+$ nix flake show
+$ nix run              # run flake.nix script
+$ nix develop          # enter to nix environment
 ```
-```
-
-## How to create python project
-
-```bash
-$ nix-shell
-$ mkdir <project-name>
-$ cd <project-name>
-$ python -m venv venv
-$ source ./venv/bin/activate
-$ python -m pip install behave
-$ python -m pip install coverage
-$ python -m pip install pydantic
-$ pythom -m list
-$ python -m pip freeze > requirements.txt
-```
-
 
 ### How to use `direnv`
 
 Create `.envrc` file for `direnv`
 
 ```bash
-cd <some-project-name>
-touch .envrc
+$ cd <some-project-name>
+$ touch .envrc
 ```
 
 Edit `.envrc` like this.
@@ -80,3 +78,7 @@ if [[ -z "$IS_IN_NIX_SHELL" ]] ; then
    source ./venv/bin/activate
 fi
 ```
+
+## References
+
+- <https://www.tweag.io/blog/2020-05-25-flakes/>
