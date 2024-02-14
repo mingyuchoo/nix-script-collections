@@ -1,4 +1,4 @@
-#! /bin/bash 
+#!/usr/bin/env bash
 
 # add $HOME/.emacs.d/bin path to .profile
 ########################################
@@ -26,7 +26,7 @@ else
     "$HOME/.emacs.d/bin/doom" sync
 fi
 
-# Install vundler 
+# Install vundler
 ########################################
 if [ -d "$HOME/.vim/bundle" ]
 then
