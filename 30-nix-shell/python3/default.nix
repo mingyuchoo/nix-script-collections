@@ -12,8 +12,8 @@ in
     shellHook = ''
       export EDITOR=emacs
       eval "$(direnv hook bash)"
-      python -m venv venv
-      source venv/bin/activate
+      python -m venv .venv
+      source ./.venv/bin/activate
       echo "Welcome to nix-shell for Python3!"
     '';
   }

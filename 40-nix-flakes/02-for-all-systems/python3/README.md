@@ -23,7 +23,6 @@ nix build
 # nix run # TODO
 ```
 
-
 ### Install flakes
 
 Edit `/etc/nix/nix.conf` if you installed Nix as `Multi-user` or
@@ -43,6 +42,7 @@ nix flake show
 nix run              # run flake.nix script
 nix develop          # enter to nix environment
 ```
+
 ```
 
 ## How to create python project
@@ -51,15 +51,14 @@ nix develop          # enter to nix environment
 $ nix-shell
 $ mkdir <project-name>
 $ cd <project-name>
-$ python -m venv venv
-$ source ./venv/bin/activate
+$ python -m venv .venv
+$ source ./.venv/bin/activate
 $ python -m pip install behave
 $ python -m pip install coverage
 $ python -m pip install pydantic
 $ pythom -m list
 $ python -m pip freeze > requirements.txt
 ```
-
 
 ### How to use `direnv`
 
@@ -77,6 +76,6 @@ This shell script prevents infinitely recursive execution of commands.
 if [[ -z "$IS_IN_NIX_SHELL" ]] ; then
    export IS_IN_NIX_SHELL=1
    # add some command to execute here
-   source ./venv/bin/activate
+   source ./.venv/bin/activate
 fi
 ```

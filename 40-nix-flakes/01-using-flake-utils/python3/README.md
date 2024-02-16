@@ -37,8 +37,8 @@ nix develop          # enter to nix environment
 $ nix-shell
 $ mkdir <project-name>
 $ cd <project-name>
-$ python -m venv venv
-$ source ./venv/bin/activate
+$ python -m venv .venv
+$ source ./.venv/bin/activate
 $ python -m pip install behave
 $ python -m pip install coverage
 $ python -m pip install pydantic
@@ -63,6 +63,6 @@ This shell script prevents infinitely recursive execution of commands.
 if [[ -z "$IS_IN_NIX_SHELL" ]] ; then
    export IS_IN_NIX_SHELL=1
    # add some command to execute here
-   source ./venv/bin/activate
+   source ./.venv/bin/activate
 fi
 ```
