@@ -1,4 +1,4 @@
-#! /bin/bash 
+#!/usr/bin/env bash
 
 # Update Ubuntu
 ########################################
@@ -38,7 +38,7 @@ then
     echo "[DONE] docker group is created successfully."
 else
     echo "[NOTICE] \`docker\` group is already created."
-fi 
+fi
 
 # Install docker-compose
 ########################################
