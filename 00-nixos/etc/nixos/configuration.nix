@@ -140,7 +140,7 @@
       gradle
       jdk17
       # for Haskell
-      haskell.compiler.ghc962
+      haskell.compiler.ghc963
       haskellPackages.cabal-install
       haskellPackages.haskell-language-server
       haskellPackages.stack
@@ -257,6 +257,6 @@
     "nix-command"
     "flakes"
   ];
-  
+
   virtualisation.docker.enable = true;
 }

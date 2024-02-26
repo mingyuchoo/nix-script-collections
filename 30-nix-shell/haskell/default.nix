@@ -5,7 +5,7 @@ in
     name = "haskell";
     buildInputs = [
       pkgs.direnv
-      pkgs.haskell.compiler.ghc962
+      pkgs.haskell.compiler.ghc963
       pkgs.haskellPackages.cabal-install
       pkgs.haskellPackages.haskell-language-server
       pkgs.haskellPackages.stack
