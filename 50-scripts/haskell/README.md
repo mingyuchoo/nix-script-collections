@@ -199,7 +199,7 @@ with import <nixpkgs> {};
 ```nix
 let
   pkgs = import <nixpkgs> {};
-  version = "ghc921";
+  version = "ghc963";
 in
   with pkgs;
   mkShell {
@@ -222,7 +222,7 @@ in
 { pkgs ? import <nixpkgs> {}
 } :
 let
-  version = "ghc921";
+  version = "ghc963";
 in
   with pkgs;
     stdenv.mkDerivation rec {

@@ -14,7 +14,7 @@
           devShells.default = pkgs.mkShell {
             buildInputs = with pkgs; [
               direnv
-              haskell.compiler.ghc925
+              haskell.compiler.ghc963
               haskellPackages.cabal-install
               haskellPackages.haskell-language-server
               haskellPackages.stack
