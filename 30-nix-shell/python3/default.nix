@@ -11,6 +11,7 @@ in
     ];
     shellHook = ''
       export EDITOR=emacs
+      export PS1="\\e[1;36m(shell) \u@\h:\W > \\e[0m"
       eval "$(direnv hook bash)"
       python -m venv .venv
       source ./.venv/bin/activate
