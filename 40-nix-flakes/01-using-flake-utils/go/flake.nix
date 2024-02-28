@@ -14,10 +14,8 @@
           devShells.default = pkgs.mkShell {
             buildInputs = with pkgs; [
               direnv
-              gcc
-              glibc
-              glibc.static
-              go_1_20
+              clang
+              go_1_21
               libcap
             ];
             shellHook = ''

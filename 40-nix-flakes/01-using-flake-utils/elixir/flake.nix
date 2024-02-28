@@ -14,7 +14,7 @@
           devShells.default = pkgs.mkShell {
             buildInputs = with pkgs; [
               direnv
-              beam.packages.erlangR25.elixir_1_14
+              beam.packages.erlangR26.elixir_1_16
             ];
             shellHook = ''
               export LANG=C.UTF-8

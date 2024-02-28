@@ -14,10 +14,7 @@
           devShells.default = pkgs.mkShell {
             buildInputs = with pkgs; [
               direnv
-              gcc
-              cmake
-              glibc
-              glibc.static
+              clang
             ];
             shellHook = ''
               export LANG=C.UTF-8
