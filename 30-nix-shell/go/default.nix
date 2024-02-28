@@ -5,9 +5,8 @@ in
     name = "go";
     buildInputs = [
       pkgs.direnv
-      pkgs.gcc
-      pkgs.glibc.static
-      pkgs.go_1_20
+      pkgs.clang
+      pkgs.go_1_21
       pkgs.libcap
     ];
     shellHook = ''
