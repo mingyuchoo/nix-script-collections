@@ -5,7 +5,7 @@ in
     name = "exlixir";
     buildInputs = [
       pkgs.direnv
-      pkgs.beam.packages.erlangR25.elixir_1_14
+      pkgs.beam.packages.erlangR26.elixir_1_16
     ];
     shellHook = ''
       export EDITOR=emacs
