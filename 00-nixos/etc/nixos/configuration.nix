@@ -141,14 +141,20 @@
       jdk17
       # for Haskell
       haskell.compiler.ghc963
-      haskellPackages.cabal-install
-      haskellPackages.haskell-language-server
+      haskell.packages.ghc963.cabal-install
+      haskell.packages.ghc963.ghcid
+      haskell.packages.ghc963.haskell-language-server
+      haskell.packages.ghc963.hlint
+      haskell.packages.ghc963.hoogle
+      haskell.packages.ghc963.stylish-haskell
       haskellPackages.stack
-      haskellPackages.stylish-haskell
-      haskellPackages.ghcid
       haskellPackages.hindent
-      haskellPackages.hlint
-      haskellPackages.hoogle
+      haskellPackages.dhall      
+      haskellPackages.dhall-bash
+      haskellPackages.dhall-json
+      haskellPackages.dhall-nix
+      haskellPackages.dhall-toml
+      haskellPackages.dhall-yaml
       # for Lua
       lua5_4
       lua-language-server
