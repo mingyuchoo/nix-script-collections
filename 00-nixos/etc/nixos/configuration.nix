@@ -93,92 +93,6 @@
       "docker"
     ];
     packages = with pkgs; [
-      # for Web
-      brave
-      microsoft-edge
-      # for Plasma
-      kate
-      plasma5Packages.akonadi
-      plasma5Packages.akonadi-notes
-      plasma5Packages.discover
-      plasma5Packages.knotes
-      # for GNOME
-      gnome.gnome-tweaks
-      # for Desktop
-      citrix_workspace_23_07_0
-      discord
-      drawio
-      obsidian
-      slack
-      telegram-desktop
-      zoom-us
-      # for Editor
-      vscode
-      dbeaver
-      # for AWS
-      awscli2
-      # for DropBox
-      maestral
-      maestral-gui
-      # for Bun
-      bun
-      # for Zig
-      zig
-      # for Rust
-      cargo-lambda
-      cargo-modules
-      cargo-tauri
-      cargo-watch
-      rustup
-      # for Nodejs
-      nodejs-18_x
-      nodePackages_latest.pnpm
-      nodePackages_latest.typescript
-      nodePackages_latest.typescript-language-server
-      # for Java
-      coursier
-      gradle
-      jdk17
-      # for Haskell
-      haskell.compiler.ghc963
-      haskell.packages.ghc963.cabal-install
-      haskell.packages.ghc963.ghcid
-      haskell.packages.ghc963.haskell-language-server
-      haskell.packages.ghc963.hlint
-      haskell.packages.ghc963.hoogle
-      haskell.packages.ghc963.stylish-haskell
-      haskellPackages.stack
-      haskellPackages.hindent
-      haskellPackages.dhall      
-      haskellPackages.dhall-bash
-      haskellPackages.dhall-json
-      haskellPackages.dhall-nix
-      haskellPackages.dhall-toml
-      haskellPackages.dhall-yaml
-      # for Lua
-      lua5_4
-      lua-language-server
-      # for OCaml
-      ocaml-ng.ocamlPackages_latest.ocaml
-      ocaml-ng.ocamlPackages_latest.findlib
-      ocaml-ng.ocamlPackages_latest.dune_3
-      ocaml-ng.ocamlPackages_latest.ocamlgraph
-      # for Terraform
-      terraform
-      # for Elm
-      elmPackages.elm
-      elmPackages.elm-analyse
-      elmPackages.elm-doc-preview
-      elmPackages.elm-format
-      elmPackages.elm-language-server
-      elmPackages.elm-live
-      elmPackages.elm-test
-      # for Python
-      python3
-      python3Packages.pip
-      python3Packages.virtualenv
-      # for Office
-      libreoffice
     ];
   };
 
@@ -188,41 +102,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # for Dev
-    cmake
-    ddd
-    gnumake42
-    gcc
-    gdb
-    glib
-    glibc
-    glibc.static
-    pkg-config
-    # for CLI
-    appimage-run
-    direnv
-    emacs-nox
-    git
-    htop
-    jq
-    netcat
-    neovim
-    nnn
-    tmux
-    tree
-    ripgrep
-    unzip
-    wget
-    xsel
-    zip
-    # for iOS
-    libimobiledevice
-    ifuse
-    fuse3
-    # for Docker
-    docker
-    docker-compose
-    docui
+    home-manager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

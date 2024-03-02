@@ -51,7 +51,13 @@ home-manager switch                  # Upgrade packages with Home Manager
 ```bash
 sudo nix-store --gc
 sudo nix-collect-garbage
-nix-env --delete-generations old
+```
+
+#### Cleaning generations
+
+```bash
+sudo nix-env --profile /nix/var/nix/profiles/system --list-generations
+sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old
 ```
 
 ## Install flakes
