@@ -21,6 +21,7 @@
     pkgs.elmPackages.elm-test
     pkgs.emacs29-gtk3
     pkgs.firefox
+    pkgs.fuse3
     pkgs.git
     pkgs.gnumake
     pkgs.gradle
@@ -41,8 +42,10 @@
     pkgs.haskellPackages.stack
     pkgs.htop
     pkgs.jdk17
+    pkgs.ifuse
     pkgs.jq
     pkgs.kate
+    pkgs.libimobiledevice
     pkgs.libreoffice
     pkgs.lua-language-server
     pkgs.lua5_4
