@@ -1,9 +1,14 @@
-# stty
 stty erase ^H
 
-# env
+PS1='[\u@\h \W]\$ '
+
 export EDITOR=emacs
 
-# aliases
-alias n3=nnn
+alias '...'='cd ../../'
+alias ls='ls --color=auto'
+alias ll='ls -la'
 alias vi=nvim
+alias vim=nvim
+
+#eval "$(opam env)"
+#eval "$(direnv hook bash)"
