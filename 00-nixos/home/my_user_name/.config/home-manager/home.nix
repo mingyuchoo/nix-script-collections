@@ -12,6 +12,7 @@
     pkgs.direnv
     pkgs.discord
     pkgs.drawio
+    pkgs.elixir
     pkgs.elmPackages.elm
     pkgs.elmPackages.elm-analyse
     pkgs.elmPackages.elm-doc-preview
@@ -20,6 +21,7 @@
     pkgs.elmPackages.elm-live
     pkgs.elmPackages.elm-test
     pkgs.emacs29-gtk3
+    pkgs.erlang
     pkgs.firefox
     pkgs.fuse3
     pkgs.git
