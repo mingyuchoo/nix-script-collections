@@ -5,14 +5,19 @@
   home.homeDirectory = "/home/mgch";
   home.stateVersion = "23.11";
   home.packages = [
+    pkgs.beekeeper-studio
+    pkgs.brave
     pkgs.bun
     pkgs.cargo-modules
     pkgs.cargo-watch
     pkgs.clang
+    pkgs.cmake
+    pkgs.dbeaver
     pkgs.direnv
     pkgs.discord
     pkgs.drawio
-    pkgs.elixir
+    pkgs.elixir_1_16
+    pkgs.elixir-ls
     pkgs.elmPackages.elm
     pkgs.elmPackages.elm-analyse
     pkgs.elmPackages.elm-doc-preview
@@ -21,8 +26,7 @@
     pkgs.elmPackages.elm-live
     pkgs.elmPackages.elm-test
     pkgs.emacs29-gtk3
-    pkgs.erlang
-    pkgs.firefox
+    pkgs.erlang_26
     pkgs.fuse3
     pkgs.git
     pkgs.gnumake
@@ -43,10 +47,13 @@
     pkgs.haskellPackages.hindent
     pkgs.haskellPackages.stack
     pkgs.htop
-    pkgs.jdk17
+    pkgs.hurl
     pkgs.ifuse
+    pkgs.inotify-tools
+    pkgs.jdk17
     pkgs.jq
     pkgs.kate
+    pkgs.lazydocker
     pkgs.libimobiledevice
     pkgs.libreoffice
     pkgs.lua-language-server
@@ -64,18 +71,24 @@
     pkgs.ocaml-ng.ocamlPackages_latest.findlib
     pkgs.ocaml-ng.ocamlPackages_latest.ocaml
     pkgs.ocaml-ng.ocamlPackages_latest.ocamlgraph
+    pkgs.openssl
+    pkgs.packer
+    pkgs.pkg-config
     pkgs.python3
     pkgs.python3Packages.pip
     pkgs.python3Packages.virtualenv
+    pkgs.ranger
     pkgs.rustup
     pkgs.slack
     pkgs.telegram-desktop
+    pkgs.terraform
     pkgs.tmux
     pkgs.tree
     pkgs.unzip
     pkgs.vscode
     pkgs.wget
     pkgs.xsel
+    pkgs.yarn
     pkgs.zig
     pkgs.zip
     pkgs.zoom-us
