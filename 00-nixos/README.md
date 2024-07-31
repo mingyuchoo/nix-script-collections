@@ -12,31 +12,33 @@
 ## How to rebuild
 
 ```bash
-$ sudo nixos-rebuild switch
-$ sudo nixos-rebuild test
-$ sudo nixos-rebuild boot
+sudo nixos-rebuild switch
+sudo nixos-rebuild test
+sudo nixos-rebuild boot
 ```
+
 ## How to update every packages
 
 ```bash
-$ sudo nix-channel --update            # check and set the lastest channel
-$ sudo nixos-rebuild switch --upgrade  # Upgrade packages with declarative/NixOS
-$ nix-env -u '*'                       # Upgrade packages with Ad-hoc
+sudo nix-channel --update            # check and set the lastest channel
+sudo nixos-rebuild switch --upgrade  # Upgrade packages with declarative/NixOS
+nix-env -u '*'                       # Upgrade packages with Ad-hoc
 ```
+
 ### Cleaning the nix store
 
 ```bash
 # for root
-$ sudo nix-env --profile /nix/var/nix/profiles/system --list-generations
-$ sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old
-$ sudo nix-collect-garbage -d
-$ sudo nix-store --gc
+sudo nix-env --profile /nix/var/nix/profiles/system --list-generations
+sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old
+sudo nix-collect-garbage -d
+sudo nix-store --gc
 
 # for current user
-$ nix-env --list-generations
-$ nix-env --delete-generations old
-$ nix-collect-garbage -d
-$ nix-store --gc
+nix-env --list-generations
+nix-env --delete-generations old
+nix-collect-garbage -d
+nix-store --gc
 ```
 
 ## NixOS Home Manager
@@ -56,19 +58,20 @@ environment.systemPackages = with pkg; [
 Initialize $HOME for Home Manager as below
 
 ```bash
-$ home-manager init
-$ cd /.config/home-manager/
-$ ls
+home-manager init
+cd /.config/home-manager/
+ls
 flake.nix home.nix
 ```
+
 #### Option 2: Standalone installation
 
 ```bash
-$ nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-$ nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
-$ nix-channel --update
-$ reboot
-$ nix-shell '<home-manager>' -A install
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+nix-channel --update
+reboot
+nix-shell '<home-manager>' -A install
 ```
 
 ### Using Home Manager
@@ -76,31 +79,32 @@ $ nix-shell '<home-manager>' -A install
 #### Configuration
 
 ```bash
-$ vi $HOME/.config/home-manager/home.nix
+vi $HOME/.config/home-manager/home.nix
 ```
 
 #### Build and activate
 
 ```bash
 # short
-$ home-manager switch
+home-manager switch
+
 # full
-$ home-manager switch --flake $HOME/.config/home-manager/#mgch
+home-manager switch --flake $HOME/.config/home-manager/#mgch
 ```
 
 #### Rollbacks
 
 ```bash
-$ home-manager generations
+home-manager generations
 # copy the Nix store path
-$ <copied-nix-store-path>/activate
+<copied-nix-store-path>/activate
 ```
 
 ### Updating
 
 ```bash
-$ nix-channel --update
+nix-channel --update
 ...
 unpacking channels...
-$ export NIXPKGS_ALLOW_UNFREE=1; home-manager switch
+export NIXPKGS_ALLOW_UNFREE=1; home-manager switch
 ```
