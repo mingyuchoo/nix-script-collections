@@ -82,6 +82,7 @@
     neovim
     netcat
     packer
+    rlwrap
     terraform
     tmux
     tree
