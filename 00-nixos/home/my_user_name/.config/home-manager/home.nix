@@ -2,8 +2,11 @@
 
 {
   home.username = "mgch";
+
   home.homeDirectory = "/home/mgch";
+
   home.stateVersion = "23.11";
+
   home.packages = with pkgs; [
     # c/c++
     clang
@@ -102,13 +105,22 @@
     vscode
     zoom-us
   ];
+
   home.file = {
   };
+
   home.sessionVariables = {
     EDITOR = "emacs";
   };
+
   nixpkgs.config = {
     allowUnfree = true;
   };
+
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
+
   programs.home-manager.enable = true;
 }
