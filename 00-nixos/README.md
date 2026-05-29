@@ -12,8 +12,8 @@
 ## How to rebuild
 
 ```bash
-sudo nixos-rebuild switch
 sudo nixos-rebuild test
+sudo nixos-rebuild switch
 sudo nixos-rebuild boot
 ```
 
