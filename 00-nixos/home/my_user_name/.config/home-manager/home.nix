@@ -120,7 +120,7 @@
       df = "df -h";
       ll = "ls -alh";
       la = "ls -A";
-      nr = "nix repl --expr '<nixpkgs>{}'";
+      nr = "nix repl --expr 'import <nixpkgs>{}'";
       sbcl = "rlwrap sbcl";
       update = "sudo nixos-rebuild switch";
       y = "yazi";
