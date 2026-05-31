@@ -125,6 +125,13 @@
       update = "sudo nixos-rebuild switch";
       y = "yazi";
     };
+    bashrcExtra = ''
+      nix-run() {
+        local pkg="$1"
+        shift
+        nix run "nixpkgs#$pkg" -- "$@"
+      }
+    '';
   };
 
   # Java
